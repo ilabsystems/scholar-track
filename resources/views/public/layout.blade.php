@@ -93,7 +93,7 @@
             </div>
         </nav>
         <main>
-            <div class="min-h-screen bg-gray-50">
+            <div class="bg-gray-50">
                 @yield('content')
             </div>
         </main>
