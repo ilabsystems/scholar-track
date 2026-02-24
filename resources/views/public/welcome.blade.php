@@ -138,6 +138,156 @@
         </div>
     </section>
 
+    <!-- Application Process -->
+    <section id="process" class="py-24 sm:py-32 bg-white">
+        <div class="mx-auto max-w-7xl px-6 lg:px-8">
+            <div class="mx-auto max-w-2xl text-center">
+                <h2 class="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">Application Process</h2>
+                <p class="mt-6 text-lg leading-8 text-gray-600">Simple steps to apply for your municipal scholarship.</p>
+            </div>
+            <div class="mx-auto mt-16 max-w-4xl">
+                <div class="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-4">
+                    <div class="text-center">
+                        <div class="mx-auto flex h-16 w-16 items-center justify-center rounded-full bg-blue-100">
+                            <span class="text-2xl font-bold text-blue-600">1</span>
+                        </div>
+                        <h3 class="mt-4 text-lg font-semibold text-gray-900">Create Account</h3>
+                        <p class="mt-2 text-sm text-gray-600">Register for an account and verify your email address.</p>
+                    </div>
+                    <div class="text-center">
+                        <div class="mx-auto flex h-16 w-16 items-center justify-center rounded-full bg-blue-100">
+                            <span class="text-2xl font-bold text-blue-600">2</span>
+                        </div>
+                        <h3 class="mt-4 text-lg font-semibold text-gray-900">Fill Application</h3>
+                        <p class="mt-2 text-sm text-gray-600">Complete the online application form with your personal information.</p>
+                    </div>
+                    <div class="text-center">
+                        <div class="mx-auto flex h-16 w-16 items-center justify-center rounded-full bg-blue-100">
+                            <span class="text-2xl font-bold text-blue-600">3</span>
+                        </div>
+                        <h3 class="mt-4 text-lg font-semibold text-gray-900">Upload Documents</h3>
+                        <p class="mt-2 text-sm text-gray-600">Submit all required documents in digital format.</p>
+                    </div>
+                    <div class="text-center">
+                        <div class="mx-auto flex h-16 w-16 items-center justify-center rounded-full bg-blue-100">
+                            <span class="text-2xl font-bold text-blue-600">4</span>
+                        </div>
+                        <h3 class="mt-4 text-lg font-semibold text-gray-900">Review & Approval</h3>
+                        <p class="mt-2 text-sm text-gray-600">Scholarship committee reviews your application and makes a decision.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Important Dates -->
+    <section id="dates" class="py-24 sm:py-32 bg-white">
+        <div class="mx-auto max-w-7xl px-6 lg:px-8">
+            <div class="mx-auto max-w-2xl text-center">
+                <h2 class="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">Important Dates</h2>
+                <p class="mt-6 text-lg leading-8 text-gray-600">Key deadlines and schedule for the scholarship program.</p>
+            </div>
+            <div class="mx-auto mt-16 max-w-4xl">
+                <div class="space-y-8">
+                    <div class="flex items-center">
+                        <div class="flex-shrink-0">
+                            <div class="flex h-12 w-12 items-center justify-center rounded-full bg-blue-100">
+                                <i class="fas fa-calendar-plus text-blue-600"></i>
+                            </div>
+                        </div>
+                        <div class="ml-4">
+                            <h4 class="text-lg font-semibold text-gray-900">Application Opening</h4>
+                            <p class="text-gray-600">January 15, 2026</p>
+                            <p class="text-sm text-gray-500">Online applications become available</p>
+                        </div>
+                    </div>
+                    <div class="flex items-center">
+                        <div class="flex-shrink-0">
+                            <div class="flex h-12 w-12 items-center justify-center rounded-full bg-red-100">
+                                <i class="fas fa-calendar-times text-red-600"></i>
+                            </div>
+                        </div>
+                        <div class="ml-4">
+                            <h4 class="text-lg font-semibold text-gray-900">Application Deadline</h4>
+                            <p class="text-gray-600">March 31, 2026</p>
+                            <p class="text-sm text-gray-500">Final date to submit complete applications</p>
+                        </div>
+                    </div>
+                    <div class="flex items-center">
+                        <div class="flex-shrink-0">
+                            <div class="flex h-12 w-12 items-center justify-center rounded-full bg-yellow-100">
+                                <i class="fas fa-search text-yellow-600"></i>
+                            </div>
+                        </div>
+                        <div class="ml-4">
+                            <h4 class="text-lg font-semibold text-gray-900">Screening Period</h4>
+                            <p class="text-gray-600">April 1 - April 30, 2026</p>
+                            <p class="text-sm text-gray-500">Document verification and initial screening</p>
+                        </div>
+                    </div>
+                    <div class="flex items-center">
+                        <div class="flex-shrink-0">
+                            <div class="flex h-12 w-12 items-center justify-center rounded-full bg-green-100">
+                                <i class="fas fa-bullhorn text-green-600"></i>
+                            </div>
+                        </div>
+                        <div class="ml-4">
+                            <h4 class="text-lg font-semibold text-gray-900">Results Announcement</h4>
+                            <p class="text-gray-600">May 15, 2026</p>
+                            <p class="text-sm text-gray-500">Scholarship recipients will be notified</p>
+                        </div>
+                    </div>
+                    <div class="flex items-center">
+                        <div class="flex-shrink-0">
+                            <div class="flex h-12 w-12 items-center justify-center rounded-full bg-purple-100">
+                                <i class="fas fa-money-bill-wave text-purple-600"></i>
+                            </div>
+                        </div>
+                        <div class="ml-4">
+                            <h4 class="text-lg font-semibold text-gray-900">Disbursement</h4>
+                            <p class="text-gray-600">June 1, 2026</p>
+                            <p class="text-sm text-gray-500">First scholarship payments distributed</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Statistics / Transparency -->
+    <section id="statistics" class="py-24 sm:py-32 bg-gray-50">
+        <div class="mx-auto max-w-7xl px-6 lg:px-8">
+            <div class="mx-auto max-w-2xl text-center">
+                <h2 class="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">Program Impact & Transparency</h2>
+                <p class="mt-6 text-lg leading-8 text-gray-600">Our commitment to educational excellence through measurable results.</p>
+            </div>
+            <div class="mx-auto mt-16 max-w-4xl">
+                <div class="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-4">
+                    <div class="text-center">
+                        <div class="text-4xl font-bold text-blue-600">500+</div>
+                        <div class="mt-2 text-lg font-semibold text-gray-900">Scholars Supported</div>
+                        <div class="mt-1 text-sm text-gray-600">Active recipients this year</div>
+                    </div>
+                    <div class="text-center">
+                        <div class="text-4xl font-bold text-green-600">₱5M</div>
+                        <div class="mt-2 text-lg font-semibold text-gray-900">Educational Assistance</div>
+                        <div class="mt-1 text-sm text-gray-600">Total funds distributed</div>
+                    </div>
+                    <div class="text-center">
+                        <div class="text-4xl font-bold text-purple-600">30</div>
+                        <div class="mt-2 text-lg font-semibold text-gray-900">Partner Schools</div>
+                        <div class="mt-1 text-sm text-gray-600">Educational institutions</div>
+                    </div>
+                    <div class="text-center">
+                        <div class="text-4xl font-bold text-orange-600">95%</div>
+                        <div class="mt-2 text-lg font-semibold text-gray-900">Completion Rate</div>
+                        <div class="mt-1 text-sm text-gray-600">Scholars completing studies</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- CTA Section -->
     <section class="bg-blue-600">
         <div class="px-6 py-24 sm:px-6 sm:py-32 lg:px-8">
@@ -156,38 +306,5 @@
         </div>
     </section>
 
-    <!-- Footer -->
-    <footer id="contact" class="bg-gray-900" aria-labelledby="footer-heading">
-        <div class="mx-auto max-w-7xl px-6 pb-8 pt-16 sm:pt-24 lg:px-8 lg:pt-32">
-            <div class="xl:grid xl:grid-cols-3 xl:gap-8">
-                <div class="space-y-8">
-                    <h1 class="text-2xl font-bold text-white">Scholar Track</h1>
-                    <p class="text-sm leading-6 text-gray-300">Empowering education through efficient scholarship management.</p>
-                </div>
-                <div class="mt-16 grid grid-cols-2 gap-8 xl:col-span-2 xl:mt-0">
-                    <div class="md:grid md:grid-cols-2 md:gap-8">
-                        <div>
-                            <h3 class="text-sm font-semibold leading-6 text-white">For Applicants</h3>
-                            <ul role="list" class="mt-6 space-y-4">
-                                <li><a href="#" class="text-sm leading-6 text-gray-300 hover:text-white"><i class="fas fa-file-alt mr-2"></i>How to Apply</a></li>
-                                <li><a href="#" class="text-sm leading-6 text-gray-300 hover:text-white"><i class="fas fa-list-check mr-2"></i>Requirements</a></li>
-                                <li><a href="#" class="text-sm leading-6 text-gray-300 hover:text-white"><i class="fas fa-question-circle mr-2"></i>FAQ</a></li>
-                            </ul>
-                        </div>
-                        <div class="mt-10 md:mt-0">
-                            <h3 class="text-sm font-semibold leading-6 text-white">For Staff</h3>
-                            <ul role="list" class="mt-6 space-y-4">
-                                <li><a href="#" class="text-sm leading-6 text-gray-300 hover:text-white"><i class="fas fa-book mr-2"></i>Admin Guide</a></li>
-                                <li><a href="#" class="text-sm leading-6 text-gray-300 hover:text-white"><i class="fas fa-chart-bar mr-2"></i>Reports</a></li>
-                                <li><a href="#" class="text-sm leading-6 text-gray-300 hover:text-white"><i class="fas fa-life-ring mr-2"></i>Support</a></li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="mt-16 border-t border-white/10 pt-8 sm:mt-20 lg:mt-24">
-                <p class="text-xs leading-5 text-gray-400">&copy; 2026 Scholar Track. All rights reserved.</p>
-            </div>
-        </div>
-    </footer>
+
 @endsection
