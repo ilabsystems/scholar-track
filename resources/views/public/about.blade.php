@@ -2,45 +2,155 @@
 
 @section('content')
 <div class="min-h-screen bg-gray-50">
-<!-- About the Program -->
-<section id="about" class="py-24 sm:py-32 bg-gray-50">
-    <div class="mx-auto max-w-7xl px-6 lg:px-8">
+    <!-- Hero Section -->
+    <section class="relative isolate px-6 pt-14 lg:px-8">
+        <div class="absolute inset-x-0 -top-40 -z-10 transform-gpu overflow-hidden blur-3xl sm:-top-80" aria-hidden="true">
+            <div class="relative left-[calc(50%-11rem)] aspect-[1155/678] w-[36.125rem] -translate-x-1/2 rotate-[30deg] bg-gradient-to-tr from-blue-400 to-blue-600 opacity-20 sm:left-[calc(50%-30rem)] sm:w-[72.1875rem]" style="clip-path: polygon(74.1% 44.1%, 100% 61.6%, 97.5% 26.9%, 85.5% 0.1%, 80.7% 2%, 72.5% 32.5%, 60.2% 62.4%, 52.4% 68.1%, 47.5% 58.3%, 45.2% 34.5%, 27.5% 76.7%, 0.1% 64.9%, 17.9% 100%, 27.6% 76.8%, 76.1% 97.7%, 74.1% 44.1%)"></div>
+        </div>
+        <div class="mx-auto max-w-4xl py-32 sm:py-48 lg:py-56">
+            <div class="text-center">
+                <h1 class="text-4xl font-bold tracking-tight text-gray-900 sm:text-6xl">{{ $aboutData['title'] }}</h1>
+                <p class="mt-6 text-lg leading-8 text-gray-600">{{ $aboutData['subtitle'] }}</p>
+                <p class="mt-6 text-lg leading-8 text-gray-600 max-w-2xl mx-auto">{{ $aboutData['description'] }}</p>
+
+                <!-- Hero Stats -->
+                <div class="mt-16 grid grid-cols-2 gap-8 md:grid-cols-4">
+                    @foreach($aboutData['hero_stats'] as $stat)
+                    <div class="text-center">
+                        <div class="text-3xl font-bold text-blue-600">{{ $stat['number'] }}</div>
+                        <div class="text-sm text-gray-600">{{ $stat['label'] }}</div>
+                    </div>
+                    @endforeach
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Key Features -->
+    <section class="py-24 sm:py-32 bg-white">
+        <div class="mx-auto max-w-7xl px-6 lg:px-8">
+            <div class="mx-auto max-w-2xl text-center">
+                <h2 class="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">Why Choose Our System?</h2>
+                <p class="mt-6 text-lg leading-8 text-gray-600">Experience the future of scholarship management with cutting-edge technology and user-centric design.</p>
+            </div>
+            <div class="mx-auto mt-16 max-w-2xl sm:mt-20 lg:mt-24 lg:max-w-none">
+                <dl class="grid max-w-xl grid-cols-1 gap-x-8 gap-y-16 lg:max-w-none lg:grid-cols-3">
+                    @foreach($aboutData['features'] as $feature)
+                    <div class="flex flex-col">
+                        <dt class="flex items-center gap-x-3 text-base font-semibold leading-7 text-gray-900">
+                            <i class="{{ $feature['icon'] }} text-blue-600 text-lg"></i>
+                            {{ $feature['title'] }}
+                        </dt>
+                        <dd class="mt-4 flex flex-auto flex-col text-base leading-7 text-gray-600">
+                            <p class="flex-auto">{{ $feature['description'] }}</p>
+                        </dd>
+                    </div>
+                    @endforeach
+                </dl>
+            </div>
+        </div>
+    </section>
+
+    <!-- Benefits Section -->
+    <section class="py-24 sm:py-32 bg-gray-50">
+        <div class="mx-auto max-w-7xl px-6 lg:px-8">
+            <div class="mx-auto max-w-2xl text-center">
+                <h2 class="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">Benefits for Everyone</h2>
+                <p class="mt-6 text-lg leading-8 text-gray-600">Our system is designed to serve students, parents, and administrators with tailored experiences.</p>
+            </div>
+            <div class="mx-auto mt-16 grid max-w-2xl grid-cols-1 gap-8 sm:mt-20 lg:mx-0 lg:max-w-none lg:grid-cols-3">
+                @foreach($aboutData['benefits'] as $benefitGroup)
+                <div class="flex flex-col justify-between rounded-3xl bg-white p-8 shadow-lg ring-1 ring-gray-200 xl:p-10">
+                    <div>
+                        <div class="flex items-center gap-x-3">
+                            <i class="{{ $benefitGroup['icon'] }} text-blue-600 text-2xl"></i>
+                            <h3 class="text-lg font-semibold leading-8 text-gray-900">{{ $benefitGroup['title'] }}</h3>
+                        </div>
+                        <ul class="mt-8 space-y-3 text-sm leading-6 text-gray-600">
+                            @foreach($benefitGroup['items'] as $item)
+                            <li class="flex gap-x-3">
+                                <i class="fas fa-check text-green-600 mt-0.5"></i>
+                                {{ $item }}
+                            </li>
+                            @endforeach
+                        </ul>
+                    </div>
+                </div>
+                @endforeach
+            </div>
+        </div>
+    </section>
+
+    <!-- How It Works -->
+    <section class="py-24 sm:py-32 bg-white">
+        <div class="mx-auto max-w-7xl px-6 lg:px-8">
+            <div class="mx-auto max-w-2xl text-center">
+                <h2 class="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">{{ $aboutData['how_it_works']['title'] }}</h2>
+                <p class="mt-6 text-lg leading-8 text-gray-600">From application to disbursement, our streamlined process ensures efficiency and transparency.</p>
+            </div>
+            <div class="mx-auto mt-16 max-w-2xl sm:mt-20 lg:mt-24 lg:max-w-none">
+                <div class="grid max-w-xl grid-cols-1 gap-x-8 gap-y-16 lg:max-w-none lg:grid-cols-5">
+                    @foreach($aboutData['how_it_works']['steps'] as $step)
+                    <div class="flex flex-col items-center text-center">
+                        <div class="flex h-16 w-16 items-center justify-center rounded-full bg-blue-600 text-white text-xl font-bold mb-4">
+                            {{ $step['step'] }}
+                        </div>
+                        <h3 class="text-lg font-semibold leading-8 text-gray-900 mb-2">{{ $step['title'] }}</h3>
+                        <p class="text-base leading-7 text-gray-600">{{ $step['description'] }}</p>
+                    </div>
+                    @endforeach
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section class="py-24 sm:py-32 bg-gray-50">
+        <div class="mx-auto max-w-7xl px-6 lg:px-8">
+            <div class="mx-auto max-w-2xl text-center">
+                <h2 class="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">What Our Users Say</h2>
+                <p class="mt-6 text-lg leading-8 text-gray-600">Real experiences from students, parents, and administrators using our system.</p>
+            </div>
+            <div class="mx-auto mt-16 grid max-w-2xl grid-cols-1 gap-8 sm:mt-20 lg:mx-0 lg:max-w-none lg:grid-cols-3">
+                @foreach($aboutData['testimonials'] as $testimonial)
+                <div class="flex flex-col justify-between rounded-3xl bg-white p-8 shadow-lg ring-1 ring-gray-200 xl:p-10">
+                    <div>
+                        <div class="flex text-yellow-400 mb-4">
+                            @for($i = 1; $i <= $testimonial['rating']; $i++)
+                            <i class="fas fa-star"></i>
+                            @endfor
+                        </div>
+                        <blockquote class="text-gray-900 text-lg leading-8">
+                            "{{ $testimonial['quote'] }}"
+                        </blockquote>
+                    </div>
+                    <div class="mt-6">
+                        <div class="font-semibold text-gray-900">{{ $testimonial['author'] }}</div>
+                        <div class="text-gray-600">{{ $testimonial['role'] }}</div>
+                    </div>
+                </div>
+                @endforeach
+            </div>
+        </div>
+    </section>
+
+    <!-- Call to Action -->
+    <section class="relative isolate px-6 py-24 sm:py-32 lg:px-8">
+        <div class="absolute inset-x-0 top-1/2 -z-10 -translate-y-1/2 transform-gpu overflow-hidden opacity-30 blur-3xl" aria-hidden="true">
+            <div class="ml-[max(50%,38rem)] aspect-[1313/771] w-[82.0625rem] bg-gradient-to-tr from-blue-400 to-blue-600"></div>
+        </div>
         <div class="mx-auto max-w-2xl text-center">
-            <h2 class="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">About the Municipal Scholarship Program</h2>
-            <p class="mt-6 text-lg leading-8 text-gray-600">Our commitment to educational excellence and community development through targeted financial assistance.</p>
+            <h2 class="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">{{ $aboutData['call_to_action']['title'] }}</h2>
+            <p class="mx-auto mt-6 max-w-xl text-lg leading-8 text-gray-600">{{ $aboutData['call_to_action']['description'] }}</p>
+            <div class="mt-10 flex items-center justify-center gap-x-6">
+                <a href="{{ $aboutData['call_to_action']['primary_button']['url'] }}" class="rounded-md bg-blue-600 px-6 py-3 text-base font-semibold text-white shadow-sm hover:bg-blue-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blue-600">
+                    {{ $aboutData['call_to_action']['primary_button']['text'] }}
+                </a>
+                <a href="{{ $aboutData['call_to_action']['secondary_button']['url'] }}" class="text-base font-semibold leading-6 text-gray-900 hover:text-blue-600">
+                    {{ $aboutData['call_to_action']['secondary_button']['text'] }} <span aria-hidden="true">→</span>
+                </a>
+            </div>
         </div>
-        <div class="mx-auto mt-16 max-w-2xl sm:mt-20 lg:mt-24 lg:max-w-none">
-            <dl class="grid max-w-xl grid-cols-1 gap-x-8 gap-y-16 lg:max-w-none lg:grid-cols-3">
-                <div class="flex flex-col">
-                    <dt class="flex items-center gap-x-3 text-base font-semibold leading-7 text-gray-900">
-                        <i class="fas fa-graduation-cap text-blue-600 text-lg"></i>
-                        Educational Support
-                    </dt>
-                    <dd class="mt-4 flex flex-auto flex-col text-base leading-7 text-gray-600">
-                        <p class="flex-auto">Comprehensive financial assistance covering tuition fees, school supplies, and educational materials for qualified students.</p>
-                    </dd>
-                </div>
-                <div class="flex flex-col">
-                    <dt class="flex items-center gap-x-3 text-base font-semibold leading-7 text-gray-900">
-                        <i class="fas fa-building text-blue-600 text-lg"></i>
-                        Municipality Funded
-                    </dt>
-                    <dd class="mt-4 flex flex-auto flex-col text-base leading-7 text-gray-600">
-                        <p class="flex-auto">Fully funded and administered by the local government unit to support our community's educational goals and development.</p>
-                    </dd>
-                </div>
-                <div class="flex flex-col">
-                    <dt class="flex items-center gap-x-3 text-base font-semibold leading-7 text-gray-900">
-                        <i class="fas fa-users text-blue-600 text-lg"></i>
-                        Community Focus
-                    </dt>
-                    <dd class="mt-4 flex flex-auto flex-col text-base leading-7 text-gray-600">
-                        <p class="flex-auto">Prioritizing residents of our municipality with a focus on academic excellence, leadership potential, and community service.</p>
-                    </dd>
-                </div>
-            </dl>
-        </div>
-    </div>
-</section>
+    </section>
 </div>
 @endsection
