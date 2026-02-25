@@ -179,4 +179,10 @@ class PublicController extends Controller
     {
         return view('public.eligibility');
     }
+
+    public function track()
+    {
+        $result = null; // Placeholder for tracking logic
+        return view('public.track', compact('result'));
+    }
 }

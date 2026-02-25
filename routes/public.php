@@ -11,3 +11,4 @@ Route::get('/scholarships', [PublicController::class, 'scholarships'])->name('sc
 Route::get('/announcements', [PublicController::class, 'announcements'])->name('announcements');
 Route::get('/faq', [PublicController::class, 'faq'])->name('faq');
 Route::get('/eligibility', [PublicController::class, 'eligibility'])->name('eligibility');
+Route::get('/track', [PublicController::class, 'track'])->name('track');
