@@ -34,11 +34,20 @@
                             <a href="{{ route('eligibility') }}" class="{{ request()->routeIs('eligibility') ? 'border-blue-500 text-gray-900' : 'border-transparent text-gray-500' }} hover:border-gray-300 hover:text-gray-700 inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium">
                                 <i class="fas fa-list-check mr-1"></i>Eligibility
                             </a>
+                            <a href="{{ route('requirements') }}" class="{{ request()->routeIs('requirements') ? 'border-blue-500 text-gray-900' : 'border-transparent text-gray-500' }} hover:border-gray-300 hover:text-gray-700 inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium">
+                                <i class="fas fa-clipboard-list mr-1"></i>Requirements
+                            </a>
+                            <a href="{{ route('stats') }}" class="{{ request()->routeIs('stats') ? 'border-blue-500 text-gray-900' : 'border-transparent text-gray-500' }} hover:border-gray-300 hover:text-gray-700 inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium">
+                                <i class="fas fa-chart-bar mr-1"></i>Stats
+                            </a>
                             <a href="{{ route('faq') }}" class="{{ request()->routeIs('faq') ? 'border-blue-500 text-gray-900' : 'border-transparent text-gray-500' }} hover:border-gray-300 hover:text-gray-700 inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium">
                                 <i class="fas fa-question-circle mr-1"></i>FAQ
                             </a>
                             <a href="{{ route('announcements') }}" class="{{ request()->routeIs('announcements') ? 'border-blue-500 text-gray-900' : 'border-transparent text-gray-500' }} hover:border-gray-300 hover:text-gray-700 inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium">
                                 <i class="fas fa-bullhorn mr-1"></i>Announcements
+                            </a>
+                            <a href="{{ route('track') }}" class="{{ request()->routeIs('track') ? 'border-blue-500 text-gray-900' : 'border-transparent text-gray-500' }} hover:border-gray-300 hover:text-gray-700 inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium">
+                                <i class="fas fa-search mr-1"></i>Track
                             </a>
                             <a href="{{ route('about') }}" class="{{ request()->routeIs('about') ? 'border-blue-500 text-gray-900' : 'border-transparent text-gray-500' }} hover:border-gray-300 hover:text-gray-700 inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium">
                                 <i class="fas fa-info-circle mr-1"></i>About

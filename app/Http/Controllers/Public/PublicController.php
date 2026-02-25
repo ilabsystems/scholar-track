@@ -167,7 +167,32 @@ class PublicController extends Controller
 
     public function announcements()
     {
-        return view('public.announcements');
+        $announcements = [
+            ['barangay' => 'Centro', 'message' => 'Scholarship applications for S.Y. 2026-2027 are now open. All eligible students are encouraged to apply before March 31.', 'date' => 'January 15, 2026'],
+            ['barangay' => 'San Jose', 'message' => 'Document verification reminder: Please ensure all uploaded documents are clear and legible to avoid delays.', 'date' => 'February 10, 2026'],
+            ['barangay' => 'San Vicente', 'message' => 'Virtual orientation session scheduled for March 5 at 2:00 PM. Learn about the application process and program benefits.', 'date' => 'February 28, 2026'],
+            ['barangay' => 'Maoyod', 'message' => 'Renewal scholars: Upload your latest semester grades by March 15 to continue receiving benefits.', 'date' => 'March 1, 2026'],
+            ['barangay' => 'Binalan', 'message' => 'Barangay scholarship committee meeting rescheduled to March 10. All applicants will be notified of results.', 'date' => 'March 5, 2026'],
+            ['barangay' => 'Poblacion', 'message' => 'Financial assistance distribution for approved scholars begins March 20. Check your email for disbursement schedule.', 'date' => 'March 8, 2026'],
+        ];
+
+        return view('public.announcements', compact('announcements'));
+    }
+
+    public function requirements()
+    {
+        return view('public.requirements');
+    }
+
+    public function stats()
+    {
+        $stats = [
+            'total_scholars' => 487,
+            'total_budget' => 2450000,
+            'partner_schools' => 12,
+        ];
+
+        return view('public.stats', compact('stats'));
     }
 
     public function faq()

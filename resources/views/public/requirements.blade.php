@@ -1,3 +1,6 @@
+@extends('public.layout')
+
+@section('content')
 {{-- ═══════════════════════════════════════════════════
      REQUIREMENTS ROADMAP (Vertical Timeline)
 ═══════════════════════════════════════════════════ --}}
@@ -68,3 +71,4 @@
         </div>
     </div>
 </section>
+@endsection

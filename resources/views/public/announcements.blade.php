@@ -1,40 +1,32 @@
 @extends('public.layout')
 
 @section('content')
-<div class="min-h-screen bg-gray-50">
-<!-- Announcements / Updates -->
-<section id="announcements" class="py-24 sm:py-32 bg-white">
-    <div class="mx-auto max-w-7xl px-6 lg:px-8">
-        <div class="mx-auto max-w-2xl text-center">
-            <h2 class="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">Latest Announcements</h2>
-            <p class="mt-6 text-lg leading-8 text-gray-600">Stay updated with the latest news and important notices.</p>
-        </div>
-        <div class="mx-auto mt-16 max-w-4xl">
-            <div class="space-y-6">
-                <div class="bg-blue-50 border-l-4 border-blue-500 p-6 rounded-r-lg">
-                    <div class="flex items-center justify-between">
-                        <h4 class="text-lg font-semibold text-gray-900">2026 Scholarship Application Now Open</h4>
-                        <span class="text-sm text-gray-500">January 15, 2026</span>
-                    </div>
-                    <p class="mt-2 text-gray-600">The application period for the 2026 Municipal Scholarship Program is now open. All eligible students are encouraged to apply before the March 31 deadline.</p>
-                </div>
-                <div class="bg-green-50 border-l-4 border-green-500 p-6 rounded-r-lg">
-                    <div class="flex items-center justify-between">
-                        <h4 class="text-lg font-semibold text-gray-900">Document Verification Reminder</h4>
-                        <span class="text-sm text-gray-500">February 10, 2026</span>
-                    </div>
-                    <p class="mt-2 text-gray-600">Please ensure all uploaded documents are clear and legible. Incomplete submissions may result in application delays.</p>
-                </div>
-                <div class="bg-yellow-50 border-l-4 border-yellow-500 p-6 rounded-r-lg">
-                    <div class="flex items-center justify-between">
-                        <h4 class="text-lg font-semibold text-gray-900">Virtual Orientation Session</h4>
-                        <span class="text-sm text-gray-500">February 28, 2026</span>
-                    </div>
-                    <p class="mt-2 text-gray-600">Join our virtual orientation on March 5, 2026 at 2:00 PM to learn about the application process and program benefits.</p>
-                </div>
+{{-- ═══════════════════════════════════════════════════
+     BARANGAY ANNOUNCEMENTS
+═══════════════════════════════════════════════════ --}}
+<section id="news" class="py-20 px-6 lg:px-12 bg-white">
+    <div class="max-w-7xl mx-auto">
+        <div class="flex items-end justify-between mb-10 flex-wrap gap-4">
+            <div>
+                <span class="text-blue-600 font-bold text-xs uppercase tracking-widest">Local Updates</span>
+                <h2 class="text-3xl font-extrabold text-slate-900 mt-1">Barangay Announcements</h2>
             </div>
+            <span class="text-xs text-slate-400 font-medium">Posted by the Scholarship Office</span>
+        </div>
+        <div class="grid md:grid-cols-3 gap-6">
+            @forelse ($announcements as $item)
+            <div class="bg-slate-50 border border-slate-200 rounded-2xl p-6 hover:shadow-md transition-shadow">
+                <div class="flex items-center gap-2 mb-3">
+                    <span class="w-2.5 h-2.5 bg-blue-500 rounded-full animate-pulse"></span>
+                    <span class="text-blue-600 font-bold text-xs uppercase tracking-wide">{{ $item['barangay'] }}</span>
+                </div>
+                <p class="text-slate-800 font-semibold leading-snug">{{ $item['message'] }}</p>
+                <p class="text-slate-400 text-xs mt-3 font-medium">{{ $item['date'] }}</p>
+            </div>
+            @empty
+            <p class="text-slate-400 col-span-3 text-center">No announcements at this time.</p>
+            @endforelse
         </div>
     </div>
 </section>
-</div>
 @endsection
