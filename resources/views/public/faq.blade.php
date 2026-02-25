@@ -1,39 +1,51 @@
 @extends('public.layout')
 
 @section('content')
-<div class="min-h-screen bg-gray-50">
-<!-- FAQ Section -->
-<section id="faq" class="py-24 sm:py-32 bg-gray-50">
-    <div class="mx-auto max-w-7xl px-6 lg:px-8">
-        <div class="mx-auto max-w-2xl text-center">
-            <h2 class="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">Frequently Asked Questions</h2>
-            <p class="mt-6 text-lg leading-8 text-gray-600">Common questions about our scholarship program.</p>
+<div x-data="faqComponent()" class="py-20 px-6 lg:px-12 bg-gray-50">
+    <div class="max-w-3xl mx-auto">
+        <div class="text-center mb-10">
+            <span class="text-blue-600 font-bold text-xs uppercase tracking-widest">Help Center</span>
+            <h2 class="text-3xl font-extrabold text-gray-900 mt-2">Frequently Asked Questions</h2>
+            <p class="text-gray-600 mt-3">Can't find your answer? Contact the Scholarship Office.</p>
         </div>
-        <div class="mx-auto mt-16 max-w-4xl">
-            <div class="space-y-8">
-                <div>
-                    <h3 class="text-lg font-semibold text-gray-900">Who can apply for the municipal scholarship?</h3>
-                    <p class="mt-2 text-gray-600">Any resident of our municipality who meets the eligibility requirements, including current enrollment in an accredited educational institution and minimum academic standards.</p>
+
+        <div class="space-y-3">
+            <template x-for="(faq, index) in faqs" :key="index">
+                <div class="bg-white border border-gray-200 rounded-2xl overflow-hidden shadow-sm">
+                    <button @click="toggleFaq(index)"
+                            class="w-full text-left px-6 py-4 flex items-center justify-between gap-4 hover:bg-gray-50 transition">
+                        <span class="font-semibold text-gray-800 text-sm leading-snug" x-text="faq.q"></span>
+                        <svg class="w-5 h-5 text-gray-400 shrink-0 transition-transform duration-300"
+                             :class="{ 'rotate-180': openFaq === index }"
+                             fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+                        </svg>
+                    </button>
+                    <div x-show="openFaq === index"
+                         x-transition:enter="transition ease-out duration-300"
+                         x-transition:enter-start="opacity-0 max-h-0"
+                         x-transition:enter-end="opacity-100 max-h-screen"
+                         x-transition:leave="transition ease-in duration-200"
+                         x-transition:leave-start="opacity-100 max-h-screen"
+                         x-transition:leave-end="opacity-0 max-h-0"
+                         class="overflow-hidden">
+                        <div class="px-6 pb-5 border-t border-gray-100 pt-4 text-sm text-gray-600 leading-relaxed" x-text="faq.a"></div>
+                    </div>
                 </div>
-                <div>
-                    <h3 class="text-lg font-semibold text-gray-900">Can I apply again next year if I don't get selected?</h3>
-                    <p class="mt-2 text-gray-600">Yes, you can reapply for the next scholarship cycle. We encourage continuous improvement and welcome returning applicants who maintain good academic standing.</p>
-                </div>
-                <div>
-                    <h3 class="text-lg font-semibold text-gray-900">What happens if my grades drop during the scholarship period?</h3>
-                    <p class="mt-2 text-gray-600">Scholarship recipients must maintain the minimum GPA requirement. If grades fall below the threshold, you may be placed on probation or the scholarship may be suspended.</p>
-                </div>
-                <div>
-                    <h3 class="text-lg font-semibold text-gray-900">How will I receive the scholarship funds?</h3>
-                    <p class="mt-2 text-gray-600">Funds are disbursed directly to your educational institution or through secure bank transfer to your designated account, depending on the scholarship type.</p>
-                </div>
-                <div>
-                    <h3 class="text-lg font-semibold text-gray-900">Is there a limit to how many years I can receive the scholarship?</h3>
-                    <p class="mt-2 text-gray-600">Most scholarships are renewable annually, subject to continued eligibility and available funding. Some programs have specific duration limits based on the level of education.</p>
-                </div>
-            </div>
+            </template>
         </div>
     </div>
-</section>
 </div>
+
+<script>
+function faqComponent() {
+    return {
+        faqs: @json($faqs),
+        openFaq: null,
+        toggleFaq(index) {
+            this.openFaq = this.openFaq === index ? null : index;
+        }
+    }
+}
+</script>
 @endsection

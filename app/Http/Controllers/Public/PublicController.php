@@ -60,8 +60,8 @@ class PublicController extends Controller
                         'Instant eligibility feedback',
                         'Secure document submission',
                         'Mobile access anywhere',
-                        'Multiple scholarship opportunities'
-                    ]
+                        'Multiple scholarship opportunities',
+                    ],
                 ],
                 'parents' => [
                     'title' => 'For Parents',
@@ -72,8 +72,8 @@ class PublicController extends Controller
                         'Access financial aid history',
                         'Secure family account management',
                         '24/7 support access',
-                        'Peace of mind with transparent process'
-                    ]
+                        'Peace of mind with transparent process',
+                    ],
                 ],
                 'administrators' => [
                     'title' => 'For Administrators',
@@ -84,9 +84,9 @@ class PublicController extends Controller
                         'Streamlined approval workflows',
                         'Reduced paperwork by 90%',
                         'Data-driven decision making',
-                        'Efficient fund management'
-                    ]
-                ]
+                        'Efficient fund management',
+                    ],
+                ],
             ],
             'how_it_works' => [
                 'title' => 'How Our System Works',
@@ -94,62 +94,62 @@ class PublicController extends Controller
                     [
                         'step' => '01',
                         'title' => 'Easy Registration',
-                        'description' => 'Students and parents create secure accounts with basic information and verification.'
+                        'description' => 'Students and parents create secure accounts with basic information and verification.',
                     ],
                     [
                         'step' => '02',
                         'title' => 'Smart Application',
-                        'description' => 'AI-powered forms adapt to applicant profiles, asking only relevant questions.'
+                        'description' => 'AI-powered forms adapt to applicant profiles, asking only relevant questions.',
                     ],
                     [
                         'step' => '03',
                         'title' => 'Instant Verification',
-                        'description' => 'Automated checks validate eligibility criteria and document authenticity.'
+                        'description' => 'Automated checks validate eligibility criteria and document authenticity.',
                     ],
                     [
                         'step' => '04',
                         'title' => 'Transparent Review',
-                        'description' => 'Administrators review applications with comprehensive dashboards and analytics.'
+                        'description' => 'Administrators review applications with comprehensive dashboards and analytics.',
                     ],
                     [
                         'step' => '05',
                         'title' => 'Automated Disbursement',
-                        'description' => 'Approved funds are automatically scheduled and tracked through completion.'
-                    ]
-                ]
+                        'description' => 'Approved funds are automatically scheduled and tracked through completion.',
+                    ],
+                ],
             ],
             'testimonials' => [
                 [
                     'quote' => 'This system made applying for scholarships so much easier. I got approved in just 2 weeks!',
                     'author' => 'Maria Santos',
                     'role' => 'College Student',
-                    'rating' => 5
+                    'rating' => 5,
                 ],
                 [
                     'quote' => 'As a parent, I love being able to track my daughter\'s application progress in real-time.',
                     'author' => 'Roberto Cruz',
                     'role' => 'Parent',
-                    'rating' => 5
+                    'rating' => 5,
                 ],
                 [
                     'quote' => 'The administrative efficiency has improved dramatically. We process 3x more applications with the same staff.',
                     'author' => 'Dr. Elena Reyes',
                     'role' => 'Municipal Education Director',
-                    'rating' => 5
-                ]
+                    'rating' => 5,
+                ],
             ],
             'call_to_action' => [
                 'title' => 'Ready to Start Your Educational Journey?',
                 'description' => 'Join hundreds of successful students who have secured their education through our streamlined scholarship system.',
                 'primary_button' => [
                     'text' => 'Apply Now',
-                    'url' => '/register'
+                    'url' => '/register',
                 ],
                 'secondary_button' => [
                     'text' => 'Learn More',
-                    'url' => '/scholarships'
-                ]
-            ]
+                    'url' => '/scholarships',
+                ],
+            ],
         ];
 
         return view('public.about', compact('aboutData'));
@@ -172,7 +172,20 @@ class PublicController extends Controller
 
     public function faq()
     {
-        return view('public.faq');
+        $faqs = [
+            ['q' => 'Who is eligible to apply?', 'a' => 'Residents of Aparri, Cagayan with GWA ≥85%, family income ≤₱200,000, and enrolled in a CHED-accredited college/university.'],
+            ['q' => 'What documents are required?', 'a' => 'PSA Birth Certificate, latest Grade Slip/Transcript, Barangay Residency Certificate, and Certificate of Indigency/ITR.'],
+            ['q' => 'How do I create an account?', 'a' => 'Register with a valid email address and verify via the confirmation link sent to you.'],
+            ['q' => 'Can I reapply if not selected?', 'a' => 'Yes, you can apply for the next cycle if you maintain good academic standing.'],
+            ['q' => 'What happens during review?', 'a' => 'Applications are reviewed within 15 working days. You\'ll receive an email with results and a Reference Number if approved.'],
+            ['q' => 'How are funds disbursed?', 'a' => 'Funds go directly to your institution or via secure bank transfer to your account.'],
+            ['q' => 'When is the deadline?', 'a' => 'Applications close on March 31, 2026. Don\'t miss it!'],
+            ['q' => 'What if my grades drop?', 'a' => 'Maintain minimum GPA or face probation/suspension. Renewal requires good standing.'],
+            ['q' => 'How do I track my application?', 'a' => 'Use the Track Application page with your Reference Number and Date of Birth.'],
+            ['q' => 'How do I renew my scholarship?', 'a' => 'Existing scholars use the Renewal Portal to upload grades and confirm enrollment.'],
+        ];
+
+        return view('public.faq', compact('faqs'));
     }
 
     public function eligibility()
@@ -183,6 +196,7 @@ class PublicController extends Controller
     public function track()
     {
         $result = null; // Placeholder for tracking logic
+
         return view('public.track', compact('result'));
     }
 }
