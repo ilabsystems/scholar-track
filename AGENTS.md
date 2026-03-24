@@ -28,8 +28,14 @@ This application is a Laravel application and its main Laravel ecosystems packag
 - You must follow all existing code conventions used in this application. When creating or editing a file, check sibling files for the correct structure, approach, and naming.
 - Use descriptive names for variables and methods. For example, `isRegisteredForDiscounts`, not `discount()`.
 - Check for existing components to reuse before writing a new one.
-- For public-facing UI, prefer a white background system with deeper blue accents using `bg-white`, `bg-slate-50`, `text-slate-900`, and `blue-800` / `blue-900` tones. Avoid flat light-gray surfaces unless a specific screen intentionally needs them.
+- For public-facing UI, use a **2-tone color system** with white/light and dark slate:
+  - **Light sections**: `bg-white` or `bg-slate-50` with `text-gray-900` or `text-slate-900` for headings, `text-gray-600` or `text-slate-600` for body text
+  - **Dark sections**: `bg-slate-900` with `text-white` for headings, `text-slate-300` for body text, `text-slate-300` or `text-white` for icons
+  - **Accents on light**: Use `blue-900` or `blue-800` for buttons, links, and interactive elements
+  - **Accents on dark**: Use `white`, `text-blue-400`, or keep icons/text `white`
+  - Keep it simple: alternate between light and dark sections for visual hierarchy without using multiple colors
 - Do not use gradient backgrounds. Use solid colors instead for better clarity and consistency with the design system. Avoid `gradient-to-*`, `from-*`, and `to-*` utilities.
+- Do not use multiple accent colors (e.g., green, purple, orange). Stick to white, slate, and blue tones only.
 
 ## Verification Scripts
 
