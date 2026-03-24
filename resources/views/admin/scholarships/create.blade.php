@@ -1,7 +1,7 @@
 @extends('admin.layout')
 
 @section('content')
-<div class="md:ml-64 flex flex-col flex-1">
+<div class="flex flex-col">
     <!-- Header -->
     <div class="bg-white border-b border-gray-200 p-6">
         <div class="flex items-center">

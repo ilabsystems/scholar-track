@@ -20,7 +20,7 @@
     <body class="font-sans text-gray-900 antialiased">
         <div class="flex h-screen bg-gray-50">
             <!-- Sidebar -->
-            <div class="flex w-64 flex-col fixed inset-y-0">
+            <div class="fixed left-0 top-0 bottom-0 w-64 flex flex-col">
                 <div class="flex flex-col flex-grow bg-slate-900 pt-5 pb-4 overflow-y-auto">
                     <div class="flex items-center flex-shrink-0 px-4">
                         <a href="{{ route('dashboard') }}" class="text-white font-bold text-xl">
@@ -69,7 +69,7 @@
             </div>
 
             <!-- Main content -->
-            <div class="flex flex-col w-0 flex-1 overflow-hidden ml-64">
+            <div class="flex flex-col flex-1 ml-64 overflow-hidden">
                 <!-- Top bar -->
                 <div class="sticky top-0 z-10 flex-shrink-0 flex h-16 bg-white shadow">
                     <div class="flex-1 px-4 flex justify-between">
