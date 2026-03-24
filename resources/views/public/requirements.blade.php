@@ -7,14 +7,14 @@
 <section id="requirements" class="py-20 px-6 lg:px-12 bg-white">
     <div class="max-w-3xl mx-auto">
         <div class="text-center mb-14">
-            <span class="text-blue-600 font-bold text-xs uppercase tracking-widest">Step-by-Step</span>
+            <span class="text-blue-900 font-bold text-xs uppercase tracking-widest">Step-by-Step</span>
             <h2 class="text-3xl font-extrabold text-slate-900 mt-2">Requirement Roadmap</h2>
             <p class="text-slate-500 mt-3">Everything you need to prepare before submitting your application.</p>
         </div>
 
         @php
         $steps = [
-            ['step'=>'01','color'=>'blue',  'bg'=>'bg-blue-600',   'light'=>'bg-blue-50',   'border'=>'border-blue-200',   'text'=>'text-blue-600',
+            ['step'=>'01','color'=>'blue',  'bg'=>'bg-blue-900',   'light'=>'bg-slate-50',   'border'=>'border-slate-200',   'text'=>'text-blue-900',
              'title'=>'Prepare Digital Scans',
              'desc' =>'Scan or photograph the following documents clearly before starting.',
              'items'=>['PSA Birth Certificate (clear, colored preferred)','Latest Grade Slip or Transcript of Records','Barangay Certificate of Residency','Certificate of Indigency or ITR']],
@@ -49,9 +49,7 @@
                     <ul class="space-y-2">
                         @foreach ($s['items'] as $item)
                         <li class="flex items-start gap-2.5 text-sm text-slate-700">
-                            <svg class="w-4 h-4 mt-0.5 {{ $s['text'] }} shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"/>
-                            </svg>
+                            <i class="fa-solid fa-circle-check w-4 h-4 mt-0.5 {{ $s['text'] }} shrink-0"></i>
                             {{ $item }}
                         </li>
                         @endforeach
@@ -64,7 +62,7 @@
         <div class="text-center mt-12">
             @if (Route::has('register'))
                 <a href="{{ route('register') }}"
-                   class="inline-block bg-blue-600 text-white px-10 py-4 rounded-xl font-bold text-base hover:bg-blue-700 hover:scale-105 transition-all shadow-xl shadow-blue-200">
+                   class="inline-block bg-blue-900 text-white px-10 py-4 rounded-xl font-bold text-base hover:bg-blue-800 hover:scale-105 transition-all shadow-xl shadow-slate-200">
                     I'm Ready &mdash; Start Application
                 </a>
             @endif

@@ -14,7 +14,7 @@
                 <div class="mt-16 grid grid-cols-2 gap-8 md:grid-cols-4">
                     @foreach($aboutData['hero_stats'] as $stat)
                     <div class="text-center">
-                        <div class="text-3xl font-bold text-blue-600">{{ $stat['number'] }}</div>
+                        <div class="text-3xl font-bold text-blue-900">{{ $stat['number'] }}</div>
                         <div class="text-sm text-gray-600">{{ $stat['label'] }}</div>
                     </div>
                     @endforeach
@@ -35,7 +35,7 @@
                     @foreach($aboutData['features'] as $feature)
                     <div class="flex flex-col">
                         <dt class="flex items-center gap-x-3 text-base font-semibold leading-7 text-gray-900">
-                            <i class="{{ $feature['icon'] }} text-blue-600 text-lg"></i>
+                            <i class="{{ $feature['icon'] }} text-blue-900 text-lg"></i>
                             {{ $feature['title'] }}
                         </dt>
                         <dd class="mt-4 flex flex-auto flex-col text-base leading-7 text-gray-600">
@@ -60,7 +60,7 @@
                 <div class="flex flex-col justify-between rounded-3xl bg-white p-8 shadow-lg ring-1 ring-gray-200 xl:p-10">
                     <div>
                         <div class="flex items-center gap-x-3">
-                            <i class="{{ $benefitGroup['icon'] }} text-blue-600 text-2xl"></i>
+                            <i class="{{ $benefitGroup['icon'] }} text-blue-900 text-2xl"></i>
                             <h3 class="text-lg font-semibold leading-8 text-gray-900">{{ $benefitGroup['title'] }}</h3>
                         </div>
                         <ul class="mt-8 space-y-3 text-sm leading-6 text-gray-600">
@@ -89,7 +89,7 @@
                 <div class="grid max-w-xl grid-cols-1 gap-x-8 gap-y-16 lg:max-w-none lg:grid-cols-5">
                     @foreach($aboutData['how_it_works']['steps'] as $step)
                     <div class="flex flex-col items-center text-center">
-                        <div class="flex h-16 w-16 items-center justify-center rounded-full bg-blue-600 text-white text-xl font-bold mb-4">
+                        <div class="flex h-16 w-16 items-center justify-center rounded-full bg-blue-900 text-white text-xl font-bold mb-4">
                             {{ $step['step'] }}
                         </div>
                         <h3 class="text-lg font-semibold leading-8 text-gray-900 mb-2">{{ $step['title'] }}</h3>
@@ -134,16 +134,16 @@
     <!-- Call to Action -->
     <section class="relative isolate px-6 py-24 sm:py-32 lg:px-8">
         <div class="absolute inset-x-0 top-1/2 -z-10 -translate-y-1/2 transform-gpu overflow-hidden opacity-30 blur-3xl" aria-hidden="true">
-            <div class="ml-[max(50%,38rem)] aspect-[1313/771] w-[82.0625rem] bg-gradient-to-tr from-blue-400 to-blue-600"></div>
+            <div class="ml-[max(50%,38rem)] aspect-[1313/771] w-[82.0625rem] bg-gradient-to-tr from-blue-800 to-blue-900"></div>
         </div>
         <div class="mx-auto max-w-2xl text-center">
             <h2 class="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">{{ $aboutData['call_to_action']['title'] }}</h2>
             <p class="mx-auto mt-6 max-w-xl text-lg leading-8 text-gray-600">{{ $aboutData['call_to_action']['description'] }}</p>
             <div class="mt-10 flex items-center justify-center gap-x-6">
-                <a href="{{ $aboutData['call_to_action']['primary_button']['url'] }}" class="rounded-md bg-blue-600 px-6 py-3 text-base font-semibold text-white shadow-sm hover:bg-blue-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blue-600">
+                <a href="{{ $aboutData['call_to_action']['primary_button']['url'] }}" class="rounded-md bg-blue-900 px-6 py-3 text-base font-semibold text-white shadow-sm hover:bg-blue-800 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blue-900">
                     {{ $aboutData['call_to_action']['primary_button']['text'] }}
                 </a>
-                <a href="{{ $aboutData['call_to_action']['secondary_button']['url'] }}" class="text-base font-semibold leading-6 text-gray-900 hover:text-blue-600">
+                <a href="{{ $aboutData['call_to_action']['secondary_button']['url'] }}" class="text-base font-semibold leading-6 text-gray-900 hover:text-blue-900">
                     {{ $aboutData['call_to_action']['secondary_button']['text'] }} <span aria-hidden="true">→</span>
                 </a>
             </div>

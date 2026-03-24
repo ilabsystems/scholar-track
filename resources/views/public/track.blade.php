@@ -6,9 +6,7 @@
     <div class="max-w-2xl mx-auto px-6 py-16">
         <div class="text-center mb-10">
             <div class="inline-flex items-center justify-center w-16 h-16 bg-blue-100 rounded-2xl mb-4">
-                <svg class="w-8 h-8 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2"/>
-                </svg>
+                <i class="fa-solid fa-clipboard-list text-3xl text-blue-800"></i>
             </div>
             <h1 class="text-3xl font-extrabold text-gray-900">Track Your Application</h1>
             <p class="text-gray-600 mt-2">Enter your Reference Number and Birthday to check your real-time application status. No login required.</p>
@@ -84,9 +82,7 @@
                     </div>
                 @else
                     <div class="bg-red-50 border border-red-100 rounded-2xl p-8 text-center">
-                        <svg class="w-12 h-12 text-red-400 mx-auto mb-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/>
-                        </svg>
+                        <i class="fa-solid fa-circle-exclamation mx-auto mb-3 block text-5xl text-red-400"></i>
                         <p class="font-bold text-red-700 text-lg">No Application Found</p>
                         <p class="text-red-500 text-sm mt-1">No record matches Reference Number <strong>{{ $result['reference_number'] }}</strong> with the provided birthday. Please double-check your details.</p>
                     </div>

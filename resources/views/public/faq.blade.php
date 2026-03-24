@@ -4,7 +4,7 @@
 <div x-data="faqComponent()" class="py-20 px-6 lg:px-12 bg-gray-50">
     <div class="max-w-3xl mx-auto">
         <div class="text-center mb-10">
-            <span class="text-blue-600 font-bold text-xs uppercase tracking-widest">Help Center</span>
+            <span class="text-blue-900 font-bold text-xs uppercase tracking-widest">Help Center</span>
             <h2 class="text-3xl font-extrabold text-gray-900 mt-2">Frequently Asked Questions</h2>
             <p class="text-gray-600 mt-3">Can't find your answer? Contact the Scholarship Office.</p>
         </div>
@@ -15,11 +15,8 @@
                     <button @click="toggleFaq(index)"
                             class="w-full text-left px-6 py-4 flex items-center justify-between gap-4 hover:bg-gray-50 transition">
                         <span class="font-semibold text-gray-800 text-sm leading-snug" x-text="faq.q"></span>
-                        <svg class="w-5 h-5 text-gray-400 shrink-0 transition-transform duration-300"
-                             :class="{ 'rotate-180': openFaq === index }"
-                             fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
-                        </svg>
+                        <i class="fa-solid fa-chevron-down w-5 h-5 shrink-0 text-gray-400 transition-transform duration-300"
+                           :class="{ 'rotate-180': openFaq === index }"></i>
                     </button>
                     <div x-show="openFaq === index"
                          x-transition:enter="transition ease-out duration-300"

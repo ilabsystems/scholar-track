@@ -10,16 +10,16 @@
             <p class="mt-6 text-lg leading-8 text-gray-600">Multiple scholarship opportunities designed to support different educational needs and achievements.</p>
         </div>
         <div class="mx-auto mt-16 grid max-w-2xl auto-rows-fr grid-cols-1 gap-8 sm:mt-20 lg:mx-0 lg:max-w-none lg:grid-cols-3">
-            <article class="relative isolate flex flex-col justify-end overflow-hidden rounded-2xl bg-gradient-to-br from-blue-50 to-blue-100 px-8 pb-8 pt-16">
+            <article class="relative isolate flex flex-col justify-end overflow-hidden rounded-2xl bg-gradient-to-br from-slate-50 to-slate-100 px-8 pb-8 pt-16">
                 <div class="flex items-center gap-2 mb-4">
-                    <i class="fas fa-graduation-cap text-blue-600 text-2xl"></i>
+                    <i class="fas fa-graduation-cap text-slate-600 text-2xl"></i>
                     <h3 class="text-xl font-semibold leading-6 text-gray-900">Academic Scholarship</h3>
                 </div>
                 <p class="text-sm leading-6 text-gray-600 mb-4">Full financial support for outstanding academic performers with excellent grades and leadership qualities.</p>
                 <div class="text-xs text-gray-500 mb-4">
                     <strong>Eligibility:</strong> GPA 1.5 or higher, enrolled in accredited schools
                 </div>
-                <a href="{{ route('register') }}" class="inline-flex items-center px-4 py-2 border border-transparent text-sm font-medium rounded-md text-white bg-blue-600 hover:bg-blue-700">
+                <a href="{{ route('register') }}" class="inline-flex items-center px-4 py-2 border border-transparent text-sm font-medium rounded-md text-white bg-slate-600 hover:bg-slate-700">
                     <i class="fas fa-edit mr-2"></i>Apply Now
                 </a>
             </article>

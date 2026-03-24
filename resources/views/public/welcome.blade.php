@@ -2,14 +2,14 @@
 
 @section('content')
     <!-- Hero Section -->
-    <section class="bg-gradient-to-r from-blue-600 to-blue-800 text-white">
+    <section class="bg-blue-900 text-white">
         <div class="mx-auto max-w-7xl px-4 py-24 sm:px-6 sm:py-32 lg:px-8">
             <div class="text-center">
                 <h1 class="text-4xl font-bold tracking-tight sm:text-6xl">Scholar Track</h1>
                 <p class="mt-6 text-lg leading-8 sm:text-xl">Municipal Scholarship Management System</p>
-                <p class="mt-4 text-blue-100 max-w-2xl mx-auto">Streamline your scholarship application process with our comprehensive platform designed for municipalities, applicants, and administrators.</p>
+                <p class="mt-4 max-w-2xl mx-auto text-blue-100">Streamline your scholarship application process with our comprehensive platform designed for municipalities, applicants, and administrators.</p>
                 <div class="mt-10 flex items-center justify-center gap-x-6">
-                    <a href="{{ route('register') }}" class="rounded-md bg-white px-6 py-3 text-sm font-semibold text-blue-600 shadow-sm hover:bg-gray-50 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white">
+                    <a href="{{ route('register') }}" class="rounded-md bg-white px-6 py-3 text-sm font-semibold text-blue-900 shadow-sm hover:bg-blue-50 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white">
                         <i class="fas fa-rocket mr-2"></i>Start Your Application
                     </a>
                     <a href="#features" class="text-sm font-semibold leading-6 text-blue-100 hover:text-white">
@@ -21,7 +21,7 @@
     </section>
 
     <!-- Features Section -->
-    <section id="features" class="py-24 sm:py-32 bg-gray-50">
+    <section id="features" class="py-24 sm:py-32 bg-white">
         <div class="mx-auto max-w-7xl px-6 lg:px-8">
             <div class="mx-auto max-w-2xl text-center">
                 <h2 class="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">Everything you need for scholarship management</h2>
@@ -31,13 +31,13 @@
                 <dl class="grid max-w-xl grid-cols-1 gap-x-8 gap-y-16 lg:max-w-none lg:grid-cols-3">
                     <div class="flex flex-col">
                         <dt class="flex items-center gap-x-3 text-base font-semibold leading-7 text-gray-900">
-                            <i class="fas fa-user-graduate text-blue-600 text-lg"></i>
+                            <i class="fas fa-user-graduate text-blue-800 text-lg"></i>
                             For Applicants
                         </dt>
                         <dd class="mt-4 flex flex-auto flex-col text-base leading-7 text-gray-600">
                             <p class="flex-auto">Easy online applications, document uploads, real-time status tracking, and secure access to your scholarship information.</p>
                             <p class="mt-6">
-                                <a href="{{ route('register') }}" class="text-sm font-semibold leading-6 text-blue-600 hover:text-blue-500">
+                                <a href="{{ route('register') }}" class="text-sm font-semibold leading-6 text-blue-800 hover:text-blue-900">
                                     <i class="fas fa-edit mr-1"></i>Apply now <span aria-hidden="true">→</span>
                                 </a>
                             </p>
@@ -45,13 +45,13 @@
                     </div>
                     <div class="flex flex-col">
                         <dt class="flex items-center gap-x-3 text-base font-semibold leading-7 text-gray-900">
-                            <i class="fas fa-users-cog text-blue-600 text-lg"></i>
+                            <i class="fas fa-users-cog text-blue-800 text-lg"></i>
                             For Administrators
                         </dt>
                         <dd class="mt-4 flex flex-auto flex-col text-base leading-7 text-gray-600">
                             <p class="flex-auto">Comprehensive tools for managing programs, validating applications, processing approvals, and generating reports.</p>
                             <p class="mt-6">
-                                <a href="{{ route('login') }}" class="text-sm font-semibold leading-6 text-blue-600 hover:text-blue-500">
+                                <a href="{{ route('login') }}" class="text-sm font-semibold leading-6 text-blue-800 hover:text-blue-900">
                                     <i class="fas fa-sign-in-alt mr-1"></i>Admin login <span aria-hidden="true">→</span>
                                 </a>
                             </p>
@@ -59,13 +59,13 @@
                     </div>
                     <div class="flex flex-col">
                         <dt class="flex items-center gap-x-3 text-base font-semibold leading-7 text-gray-900">
-                            <i class="fas fa-money-bill-wave text-blue-600 text-lg"></i>
+                            <i class="fas fa-money-bill-wave text-blue-800 text-lg"></i>
                             For Finance Teams
                         </dt>
                         <dd class="mt-4 flex flex-auto flex-col text-base leading-7 text-gray-600">
                             <p class="flex-auto">Secure disbursement tracking, payment processing, reconciliation tools, and comprehensive audit trails.</p>
                             <p class="mt-6">
-                                <a href="{{ route('login') }}" class="text-sm font-semibold leading-6 text-blue-600 hover:text-blue-500">
+                                <a href="{{ route('login') }}" class="text-sm font-semibold leading-6 text-blue-800 hover:text-blue-900">
                                     <i class="fas fa-calculator mr-1"></i>Finance login <span aria-hidden="true">→</span>
                                 </a>
                             </p>
@@ -89,7 +89,7 @@
                     <div class="absolute inset-0 -z-10 bg-gradient-to-t from-gray-900 via-gray-900/40"></div>
                     <div class="absolute inset-0 -z-10 rounded-2xl ring-1 ring-inset ring-gray-900/10"></div>
                     <div class="flex items-center gap-2 mb-2">
-                        <i class="fas fa-user-graduate text-blue-400 text-xl"></i>
+                        <i class="fas fa-user-graduate text-blue-300 text-xl"></i>
                         <h3 class="text-lg font-semibold leading-6 text-white">Scholars & Applicants</h3>
                     </div>
                     <p class="text-sm leading-6 text-gray-300">Students applying for and receiving municipal scholarships</p>
@@ -99,7 +99,7 @@
                     <div class="absolute inset-0 -z-10 bg-gradient-to-t from-gray-900 via-gray-900/40"></div>
                     <div class="absolute inset-0 -z-10 rounded-2xl ring-1 ring-inset ring-gray-900/10"></div>
                     <div class="flex items-center gap-2 mb-2">
-                        <i class="fas fa-users-cog text-blue-400 text-xl"></i>
+                        <i class="fas fa-users-cog text-blue-300 text-xl"></i>
                         <h3 class="text-lg font-semibold leading-6 text-white">Scholarship Staff</h3>
                     </div>
                     <p class="text-sm leading-6 text-gray-300">Administrative staff managing applications and programs</p>
@@ -109,7 +109,7 @@
                     <div class="absolute inset-0 -z-10 bg-gradient-to-t from-gray-900 via-gray-900/40"></div>
                     <div class="absolute inset-0 -z-10 rounded-2xl ring-1 ring-inset ring-gray-900/10"></div>
                     <div class="flex items-center gap-2 mb-2">
-                        <i class="fas fa-clipboard-check text-blue-400 text-xl"></i>
+                        <i class="fas fa-clipboard-check text-blue-300 text-xl"></i>
                         <h3 class="text-lg font-semibold leading-6 text-white">Reviewers & Committee</h3>
                     </div>
                     <p class="text-sm leading-6 text-gray-300">Evaluation teams assessing scholarship applications</p>
@@ -119,7 +119,7 @@
                     <div class="absolute inset-0 -z-10 bg-gradient-to-t from-gray-900 via-gray-900/40"></div>
                     <div class="absolute inset-0 -z-10 rounded-2xl ring-1 ring-inset ring-gray-900/10"></div>
                     <div class="flex items-center gap-2 mb-2">
-                        <i class="fas fa-money-bill-wave text-blue-400 text-xl"></i>
+                        <i class="fas fa-money-bill-wave text-blue-300 text-xl"></i>
                         <h3 class="text-lg font-semibold leading-6 text-white">Treasury & Finance</h3>
                     </div>
                     <p class="text-sm leading-6 text-gray-300">Financial teams managing disbursements and payments</p>
@@ -129,7 +129,7 @@
                     <div class="absolute inset-0 -z-10 bg-gradient-to-t from-gray-900 via-gray-900/40"></div>
                     <div class="absolute inset-0 -z-10 rounded-2xl ring-1 ring-inset ring-gray-900/10"></div>
                     <div class="flex items-center gap-2 mb-2">
-                        <i class="fas fa-cog text-blue-400 text-xl"></i>
+                        <i class="fas fa-cog text-blue-300 text-xl"></i>
                         <h3 class="text-lg font-semibold leading-6 text-white">System Administrators</h3>
                     </div>
                     <p class="text-sm leading-6 text-gray-300">IT staff managing system configuration and security</p>
@@ -148,29 +148,29 @@
             <div class="mx-auto mt-16 max-w-4xl">
                 <div class="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-4">
                     <div class="text-center">
-                        <div class="mx-auto flex h-16 w-16 items-center justify-center rounded-full bg-blue-100">
-                            <span class="text-2xl font-bold text-blue-600">1</span>
+                        <div class="mx-auto flex h-16 w-16 items-center justify-center rounded-full bg-blue-50">
+                            <span class="text-2xl font-bold text-blue-800">1</span>
                         </div>
                         <h3 class="mt-4 text-lg font-semibold text-gray-900">Create Account</h3>
                         <p class="mt-2 text-sm text-gray-600">Register for an account and verify your email address.</p>
                     </div>
                     <div class="text-center">
-                        <div class="mx-auto flex h-16 w-16 items-center justify-center rounded-full bg-blue-100">
-                            <span class="text-2xl font-bold text-blue-600">2</span>
+                        <div class="mx-auto flex h-16 w-16 items-center justify-center rounded-full bg-blue-50">
+                            <span class="text-2xl font-bold text-blue-800">2</span>
                         </div>
                         <h3 class="mt-4 text-lg font-semibold text-gray-900">Fill Application</h3>
                         <p class="mt-2 text-sm text-gray-600">Complete the online application form with your personal information.</p>
                     </div>
                     <div class="text-center">
-                        <div class="mx-auto flex h-16 w-16 items-center justify-center rounded-full bg-blue-100">
-                            <span class="text-2xl font-bold text-blue-600">3</span>
+                        <div class="mx-auto flex h-16 w-16 items-center justify-center rounded-full bg-blue-50">
+                            <span class="text-2xl font-bold text-blue-800">3</span>
                         </div>
                         <h3 class="mt-4 text-lg font-semibold text-gray-900">Upload Documents</h3>
                         <p class="mt-2 text-sm text-gray-600">Submit all required documents in digital format.</p>
                     </div>
                     <div class="text-center">
-                        <div class="mx-auto flex h-16 w-16 items-center justify-center rounded-full bg-blue-100">
-                            <span class="text-2xl font-bold text-blue-600">4</span>
+                        <div class="mx-auto flex h-16 w-16 items-center justify-center rounded-full bg-blue-50">
+                            <span class="text-2xl font-bold text-blue-800">4</span>
                         </div>
                         <h3 class="mt-4 text-lg font-semibold text-gray-900">Review & Approval</h3>
                         <p class="mt-2 text-sm text-gray-600">Scholarship committee reviews your application and makes a decision.</p>
@@ -191,8 +191,8 @@
                 <div class="space-y-8">
                     <div class="flex items-center">
                         <div class="flex-shrink-0">
-                            <div class="flex h-12 w-12 items-center justify-center rounded-full bg-blue-100">
-                                <i class="fas fa-calendar-plus text-blue-600"></i>
+                            <div class="flex h-12 w-12 items-center justify-center rounded-full bg-blue-50">
+                                <i class="fas fa-calendar-plus text-blue-800"></i>
                             </div>
                         </div>
                         <div class="ml-4">
@@ -264,7 +264,7 @@
             <div class="mx-auto mt-16 max-w-4xl">
                 <div class="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-4">
                     <div class="text-center">
-                        <div class="text-4xl font-bold text-blue-600">500+</div>
+                        <div class="text-4xl font-bold text-blue-800">500+</div>
                         <div class="mt-2 text-lg font-semibold text-gray-900">Scholars Supported</div>
                         <div class="mt-1 text-sm text-gray-600">Active recipients this year</div>
                     </div>
@@ -289,13 +289,13 @@
     </section>
 
     <!-- CTA Section -->
-    <section class="bg-blue-600">
+    <section class="bg-blue-900">
         <div class="px-6 py-24 sm:px-6 sm:py-32 lg:px-8">
             <div class="mx-auto max-w-2xl text-center">
                 <h2 class="text-3xl font-bold tracking-tight text-white sm:text-4xl">Ready to get started?</h2>
                 <p class="mx-auto mt-6 max-w-xl text-lg leading-8 text-blue-100">Join thousands of scholars and administrators using Scholar Track to streamline scholarship management.</p>
                 <div class="mt-10 flex items-center justify-center gap-x-6">
-                    <a href="{{ route('register') }}" class="rounded-md bg-white px-6 py-3 text-sm font-semibold text-blue-600 shadow-sm hover:bg-gray-50 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white">
+                    <a href="{{ route('register') }}" class="rounded-md bg-white px-6 py-3 text-sm font-semibold text-blue-900 shadow-sm hover:bg-blue-50 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white">
                         <i class="fas fa-user-plus mr-2"></i>Create Account
                     </a>
                     <a href="#contact" class="text-sm font-semibold leading-6 text-white hover:text-blue-100">
