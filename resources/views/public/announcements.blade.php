@@ -1,9 +1,6 @@
 @extends('public.layout')
 
 @section('content')
-{{-- ═══════════════════════════════════════════════════
-     BARANGAY ANNOUNCEMENTS
-═══════════════════════════════════════════════════ --}}
 <section id="news" class="py-20 px-6 lg:px-12 bg-white">
     <div class="max-w-7xl mx-auto">
         <div class="flex items-end justify-between mb-10 flex-wrap gap-4">
