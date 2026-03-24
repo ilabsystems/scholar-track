@@ -1,5 +1,5 @@
 
-@extends('public.layout')
+@extends('layouts.guest')
 
 @section('content')
 {{-- Main --}}

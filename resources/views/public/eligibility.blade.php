@@ -1,4 +1,4 @@
-@extends('public.layout')
+@extends('layouts.guest')
 
 @section('content')
 <div x-data="eligibilityComponent()" class="py-20 px-6 lg:px-12 bg-white">

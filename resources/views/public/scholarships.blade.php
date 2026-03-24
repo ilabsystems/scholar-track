@@ -1,4 +1,4 @@
-@extends('public.layout')
+@extends('layouts.guest')
 
 @section('content')
 <div class="min-h-screen bg-gray-50">

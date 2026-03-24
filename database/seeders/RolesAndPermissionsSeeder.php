@@ -78,6 +78,15 @@ class RolesAndPermissionsSeeder extends Seeder
 
         // Create roles and assign permissions
         $roles = [
+            'applicant' => [
+                'create-account',
+                'verify-identity',
+                'fill-application-form',
+                'upload-documents',
+                'view-checklist',
+                'view-scholarship-terms',
+                'view-dashboard-totals',
+            ],
             'scholar' => [
                 'create-account',
                 'verify-identity',

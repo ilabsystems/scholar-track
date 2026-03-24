@@ -1,4 +1,4 @@
-@extends('public.layout')
+@extends('layouts.guest')
 
 @section('content')
 <div class="bg-gray-50">
