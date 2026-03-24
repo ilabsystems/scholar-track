@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\ApplicantProfileUpdateRequest;
 use App\Http\Requests\ProfileUpdateRequest;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
@@ -35,6 +36,29 @@ class ProfileController extends Controller
         $request->user()->save();
 
         return Redirect::route('profile.edit')->with('status', 'profile-updated');
+    }
+
+    /**
+     * Display the user's applicant profile form.
+     */
+    public function editApplicant(Request $request): View
+    {
+        return view('profile.applicant', [
+            'user' => $request->user(),
+        ]);
+    }
+
+    /**
+     * Update the user's applicant profile information.
+     */
+    public function updateApplicant(ApplicantProfileUpdateRequest $request): RedirectResponse
+    {
+        $applicantProfile = $request->user()->applicantProfile()->firstOrCreate([]);
+
+        $applicantProfile->fill($request->validated());
+        $applicantProfile->save();
+
+        return Redirect::route('profile.applicant.edit')->with('status', 'applicant-profile-updated');
     }
 
     /**
