@@ -9,6 +9,7 @@ Route::get('/', [WelcomeController::class, 'index'])->name('welcome');
 Route::get('/about', [PublicController::class, 'about'])->name('about');
 Route::get('/contact', [PublicController::class, 'contact'])->name('contact');
 Route::get('/scholarships', [PublicController::class, 'scholarships'])->name('scholarships');
+Route::get('/scholarships/{scholarship}', [PublicController::class, 'scholarshipShow'])->name('scholarships.show');
 Route::get('/announcements', [PublicController::class, 'announcements'])->name('announcements');
 Route::get('/requirements', [PublicController::class, 'requirements'])->name('requirements');
 Route::get('/stats', [PublicController::class, 'stats'])->name('stats');

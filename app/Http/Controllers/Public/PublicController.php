@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Public;
 
 use App\Http\Controllers\Controller;
+use Illuminate\Http\Request;
 
 class PublicController extends Controller
 {
@@ -160,11 +161,27 @@ class PublicController extends Controller
         return view('public.contact');
     }
 
-    public function scholarships()
+    public function scholarships(Request $request)
     {
-        $scholarships = \App\Models\Scholarship::where('status', 'active')->latest()->get();
+        $query = \App\Models\Scholarship::where('status', 'active');
 
-        return view('public.scholarships', compact('scholarships'));
+        // Search by name or description
+        if ($request->filled('search')) {
+            $search = $request->input('search');
+            $query->where(function ($q) use ($search) {
+                $q->where('name', 'like', "%{$search}%")
+                    ->orWhere('description', 'like', "%{$search}%");
+            });
+        }
+
+        $scholarships = $query->latest()->get();
+
+        return view('public.scholarships.index', compact('scholarships'));
+    }
+
+    public function scholarshipShow(\App\Models\Scholarship $scholarship)
+    {
+        return view('public.scholarships.show', compact('scholarship'));
     }
 
     public function announcements()
