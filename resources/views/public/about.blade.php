@@ -24,21 +24,21 @@
     </section>
 
     <!-- Key Features -->
-    <section class="py-24 sm:py-32 bg-white">
+    <section class="py-24 sm:py-32 bg-slate-900">
         <div class="mx-auto max-w-7xl px-6 lg:px-8">
             <div class="mx-auto max-w-2xl text-center">
-                <h2 class="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">Why Choose Our System?</h2>
-                <p class="mt-6 text-lg leading-8 text-gray-600">Experience the future of scholarship management with cutting-edge technology and user-centric design.</p>
+                <h2 class="text-3xl font-bold tracking-tight text-white sm:text-4xl">Why Choose Our System?</h2>
+                <p class="mt-6 text-lg leading-8 text-slate-300">Experience the future of scholarship management with cutting-edge technology and user-centric design.</p>
             </div>
             <div class="mx-auto mt-16 max-w-2xl sm:mt-20 lg:mt-24 lg:max-w-none">
                 <dl class="grid max-w-xl grid-cols-1 gap-x-8 gap-y-16 lg:max-w-none lg:grid-cols-3">
                     @foreach($aboutData['features'] as $feature)
                     <div class="flex flex-col">
-                        <dt class="flex items-center gap-x-3 text-base font-semibold leading-7 text-gray-900">
-                            <i class="{{ $feature['icon'] }} text-blue-900 text-lg"></i>
+                        <dt class="flex items-center gap-x-3 text-base font-semibold leading-7 text-white">
+                            <i class="{{ $feature['icon'] }} text-blue-400 text-lg"></i>
                             {{ $feature['title'] }}
                         </dt>
-                        <dd class="mt-4 flex flex-auto flex-col text-base leading-7 text-gray-600">
+                        <dd class="mt-4 flex flex-auto flex-col text-base leading-7 text-slate-300">
                             <p class="flex-auto">{{ $feature['description'] }}</p>
                         </dd>
                     </div>
@@ -49,7 +49,7 @@
     </section>
 
     <!-- Benefits Section -->
-    <section class="py-24 sm:py-32 bg-gray-50">
+    <section class="py-24 sm:py-32 bg-white">
         <div class="mx-auto max-w-7xl px-6 lg:px-8">
             <div class="mx-auto max-w-2xl text-center">
                 <h2 class="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">Benefits for Everyone</h2>
@@ -79,7 +79,7 @@
     </section>
 
     <!-- How It Works -->
-    <section class="py-24 sm:py-32 bg-white">
+    <section class="py-24 sm:py-32 bg-slate-50">
         <div class="mx-auto max-w-7xl px-6 lg:px-8">
             <div class="mx-auto max-w-2xl text-center">
                 <h2 class="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">{{ $aboutData['how_it_works']['title'] }}</h2>
@@ -102,28 +102,28 @@
     </section>
 
     <!-- Testimonials -->
-    <section class="py-24 sm:py-32 bg-gray-50">
+    <section class="py-24 sm:py-32 bg-slate-900">
         <div class="mx-auto max-w-7xl px-6 lg:px-8">
             <div class="mx-auto max-w-2xl text-center">
-                <h2 class="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">What Our Users Say</h2>
-                <p class="mt-6 text-lg leading-8 text-gray-600">Real experiences from students, parents, and administrators using our system.</p>
+                <h2 class="text-3xl font-bold tracking-tight text-white sm:text-4xl">What Our Users Say</h2>
+                <p class="mt-6 text-lg leading-8 text-slate-300">Real experiences from students, parents, and administrators using our system.</p>
             </div>
             <div class="mx-auto mt-16 grid max-w-2xl grid-cols-1 gap-8 sm:mt-20 lg:mx-0 lg:max-w-none lg:grid-cols-3">
                 @foreach($aboutData['testimonials'] as $testimonial)
-                <div class="flex flex-col justify-between rounded-3xl bg-white p-8 shadow-lg ring-1 ring-gray-200 xl:p-10">
+                <div class="flex flex-col justify-between rounded-3xl bg-slate-800 p-8 shadow-lg ring-1 ring-slate-700 xl:p-10">
                     <div>
                         <div class="flex text-yellow-400 mb-4">
                             @for($i = 1; $i <= $testimonial['rating']; $i++)
                             <i class="fas fa-star"></i>
                             @endfor
                         </div>
-                        <blockquote class="text-gray-900 text-lg leading-8">
+                        <blockquote class="text-slate-100 text-lg leading-8">
                             "{{ $testimonial['quote'] }}"
                         </blockquote>
                     </div>
                     <div class="mt-6">
-                        <div class="font-semibold text-gray-900">{{ $testimonial['author'] }}</div>
-                        <div class="text-gray-600">{{ $testimonial['role'] }}</div>
+                        <div class="font-semibold text-white">{{ $testimonial['author'] }}</div>
+                        <div class="text-slate-400">{{ $testimonial['role'] }}</div>
                     </div>
                 </div>
                 @endforeach
@@ -132,10 +132,7 @@
     </section>
 
     <!-- Call to Action -->
-    <section class="relative isolate px-6 py-24 sm:py-32 lg:px-8">
-        <div class="absolute inset-x-0 top-1/2 -z-10 -translate-y-1/2 transform-gpu overflow-hidden opacity-30 blur-3xl" aria-hidden="true">
-            <div class="ml-[max(50%,38rem)] aspect-[1313/771] w-[82.0625rem] bg-gradient-to-tr from-blue-800 to-blue-900"></div>
-        </div>
+    <section class="relative isolate px-6 py-24 sm:py-32 lg:px-8 bg-white">
         <div class="mx-auto max-w-2xl text-center">
             <h2 class="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">{{ $aboutData['call_to_action']['title'] }}</h2>
             <p class="mx-auto mt-6 max-w-xl text-lg leading-8 text-gray-600">{{ $aboutData['call_to_action']['description'] }}</p>

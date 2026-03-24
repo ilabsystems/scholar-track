@@ -13,20 +13,20 @@
                 <div class="hidden sm:ml-6 sm:flex sm:items-center sm:gap-8">
                     <!-- Resources Dropdown -->
                     <div class="relative flex h-full items-center group">
-                        <button type="button" class="border-transparent text-gray-600 hover:border-slate-400 hover:text-blue-900 inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium">
+                        <button type="button" class="{{ request()->routeIs('scholarships', 'eligibility', 'requirements', 'stats') ? 'border-blue-800 text-blue-900' : 'border-transparent text-gray-600' }} hover:border-slate-400 hover:text-blue-900 inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium">
                             <i class="fas fa-book mr-1"></i>Resources
                         </button>
                         <div class="hidden group-hover:block group-focus-within:block absolute top-full left-0 mt-1 w-48 rounded-md border border-slate-200 bg-white shadow-lg z-10">
-                            <a href="{{ route('scholarships') }}" class="block px-4 py-2 text-sm text-gray-700 hover:bg-blue-50 first:rounded-t-md {{ request()->routeIs('scholarships') ? 'bg-blue-50 text-blue-900' : '' }}">
+                            <a href="{{ route('scholarships') }}" class="block px-4 py-2 text-sm text-gray-700 hover:bg-blue-50 first:rounded-t-md {{ request()->routeIs('scholarships') ? 'bg-blue-200 text-blue-900 font-semibold' : '' }}">
                                 <i class="fas fa-graduation-cap mr-2 w-4"></i>Scholarships
                             </a>
-                            <a href="{{ route('eligibility') }}" class="block px-4 py-2 text-sm text-gray-700 hover:bg-blue-50 {{ request()->routeIs('eligibility') ? 'bg-blue-50 text-blue-900' : '' }}">
+                            <a href="{{ route('eligibility') }}" class="block px-4 py-2 text-sm text-gray-700 hover:bg-blue-50 {{ request()->routeIs('eligibility') ? 'bg-blue-200 text-blue-900 font-semibold' : '' }}">
                                 <i class="fas fa-list-check mr-2 w-4"></i>Eligibility
                             </a>
-                            <a href="{{ route('requirements') }}" class="block px-4 py-2 text-sm text-gray-700 hover:bg-blue-50 {{ request()->routeIs('requirements') ? 'bg-blue-50 text-blue-900' : '' }}">
+                            <a href="{{ route('requirements') }}" class="block px-4 py-2 text-sm text-gray-700 hover:bg-blue-50 {{ request()->routeIs('requirements') ? 'bg-blue-200 text-blue-900 font-semibold' : '' }}">
                                 <i class="fas fa-clipboard-list mr-2 w-4"></i>Requirements
                             </a>
-                            <a href="{{ route('stats') }}" class="block px-4 py-2 text-sm text-gray-700 hover:bg-blue-50 last:rounded-b-md {{ request()->routeIs('stats') ? 'bg-blue-50 text-blue-900' : '' }}">
+                            <a href="{{ route('stats') }}" class="block px-4 py-2 text-sm text-gray-700 hover:bg-blue-50 last:rounded-b-md {{ request()->routeIs('stats') ? 'bg-blue-200 text-blue-900 font-semibold' : '' }}">
                                 <i class="fas fa-chart-bar mr-2 w-4"></i>Stats
                             </a>
                         </div>
@@ -34,17 +34,17 @@
 
                     <!-- Support Dropdown -->
                     <div class="relative flex h-full items-center group">
-                        <button type="button" class="border-transparent text-gray-600 hover:border-slate-400 hover:text-blue-900 inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium">
+                        <button type="button" class="{{ request()->routeIs('faq', 'announcements', 'contact') ? 'border-blue-800 text-blue-900' : 'border-transparent text-gray-600' }} hover:border-slate-400 hover:text-blue-900 inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium">
                             <i class="fas fa-life-ring mr-1"></i>Support
                         </button>
                         <div class="hidden group-hover:block group-focus-within:block absolute top-full left-0 mt-1 w-48 rounded-md border border-slate-200 bg-white shadow-lg z-10">
-                            <a href="{{ route('faq') }}" class="block px-4 py-2 text-sm text-gray-700 hover:bg-blue-50 first:rounded-t-md {{ request()->routeIs('faq') ? 'bg-blue-50 text-blue-900' : '' }}">
+                            <a href="{{ route('faq') }}" class="block px-4 py-2 text-sm text-gray-700 hover:bg-blue-50 first:rounded-t-md {{ request()->routeIs('faq') ? 'bg-blue-200 text-blue-900 font-semibold' : '' }}">
                                 <i class="fas fa-question-circle mr-2 w-4"></i>FAQ
                             </a>
-                            <a href="{{ route('announcements') }}" class="block px-4 py-2 text-sm text-gray-700 hover:bg-blue-50 {{ request()->routeIs('announcements') ? 'bg-blue-50 text-blue-900' : '' }}">
+                            <a href="{{ route('announcements') }}" class="block px-4 py-2 text-sm text-gray-700 hover:bg-blue-50 {{ request()->routeIs('announcements') ? 'bg-blue-200 text-blue-900 font-semibold' : '' }}">
                                 <i class="fas fa-bullhorn mr-2 w-4"></i>Announcements
                             </a>
-                            <a href="{{ route('contact') }}" class="block px-4 py-2 text-sm text-gray-700 hover:bg-blue-50 last:rounded-b-md {{ request()->routeIs('contact') ? 'bg-blue-50 text-blue-900' : '' }}">
+                            <a href="{{ route('contact') }}" class="block px-4 py-2 text-sm text-gray-700 hover:bg-blue-50 last:rounded-b-md {{ request()->routeIs('contact') ? 'bg-blue-200 text-blue-900 font-semibold' : '' }}">
                                 <i class="fas fa-envelope mr-2 w-4"></i>Contact
                             </a>
                         </div>
@@ -68,7 +68,7 @@
 
             <!-- Mobile Menu Button -->
             <div class="flex items-center sm:hidden">
-                <button type="button" class="inline-flex items-center justify-center rounded-md bg-white p-2 text-gray-500 hover:bg-gray-100 hover:text-blue-900 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-blue-500" aria-controls="mobile-menu" aria-expanded="false">
+                <button type="button" class="inline-flex items-center justify-center rounded-md bg-white p-2 text-gray-500 hover:bg-gray-100 hover:text-blue-900 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-blue-900" aria-controls="mobile-menu" aria-expanded="false">
                     <span class="sr-only">Open main menu</span>
                     <i class="fas fa-bars block text-lg"></i>
                 </button>
