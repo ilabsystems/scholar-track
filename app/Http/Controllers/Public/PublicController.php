@@ -162,7 +162,9 @@ class PublicController extends Controller
 
     public function scholarships()
     {
-        return view('public.scholarships');
+        $scholarships = \App\Models\Scholarship::where('status', 'active')->latest()->get();
+
+        return view('public.scholarships', compact('scholarships'));
     }
 
     public function announcements()

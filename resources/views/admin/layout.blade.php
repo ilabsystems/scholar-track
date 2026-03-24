@@ -21,7 +21,7 @@
         <div class="flex h-screen bg-gray-50">
             <!-- Sidebar -->
             <div class="hidden md:flex md:w-64 md:flex-col md:fixed md:inset-y-0">
-                <div class="flex flex-col flex-grow bg-blue-600 pt-5 pb-4 overflow-y-auto">
+                <div class="flex flex-col flex-grow bg-slate-900 pt-5 pb-4 overflow-y-auto">
                     <div class="flex items-center flex-shrink-0 px-4">
                         <a href="{{ route('dashboard') }}" class="text-white font-bold text-xl">
                             <i class="fas fa-graduation-cap mr-2"></i>
@@ -30,38 +30,38 @@
                     </div>
                     <div class="mt-8 flex-grow flex flex-col">
                         <nav class="flex-1 px-2 space-y-1">
-                            <a href="{{ route('dashboard') }}" class="{{ request()->routeIs('dashboard') ? 'bg-blue-700 text-white' : 'text-blue-100 hover:bg-blue-700 hover:text-white' }} group flex items-center px-2 py-2 text-sm font-medium rounded-md">
+                            <a href="{{ route('dashboard') }}" class="{{ request()->routeIs('dashboard') ? 'bg-slate-800 text-white' : 'text-slate-200 hover:bg-slate-800 hover:text-white' }} group flex items-center px-2 py-2 text-sm font-medium rounded-md">
                                 <i class="fas fa-tachometer-alt mr-3"></i>
                                 Dashboard
                             </a>
-                            <a href="#" class="text-blue-100 hover:bg-blue-700 hover:text-white group flex items-center px-2 py-2 text-sm font-medium rounded-md">
+                            <a href="#" class="text-slate-200 hover:bg-slate-800 hover:text-white group flex items-center px-2 py-2 text-sm font-medium rounded-md">
                                 <i class="fas fa-users mr-3"></i>
                                 Users
                             </a>
-                            <a href="#" class="text-blue-100 hover:bg-blue-700 hover:text-white group flex items-center px-2 py-2 text-sm font-medium rounded-md">
+                            <a href="{{ route('admin.scholarships.index') }}" class="{{ request()->routeIs('admin.scholarships.*') ? 'bg-slate-800 text-white' : 'text-slate-200 hover:bg-slate-800 hover:text-white' }} group flex items-center px-2 py-2 text-sm font-medium rounded-md">
                                 <i class="fas fa-graduation-cap mr-3"></i>
                                 Scholarships
                             </a>
-                            <a href="#" class="text-blue-100 hover:bg-blue-700 hover:text-white group flex items-center px-2 py-2 text-sm font-medium rounded-md">
+                            <a href="#" class="text-slate-200 hover:bg-slate-800 hover:text-white group flex items-center px-2 py-2 text-sm font-medium rounded-md">
                                 <i class="fas fa-chart-bar mr-3"></i>
                                 Reports
                             </a>
-                            <a href="#" class="text-blue-100 hover:bg-blue-700 hover:text-white group flex items-center px-2 py-2 text-sm font-medium rounded-md">
+                            <a href="#" class="text-slate-200 hover:bg-slate-800 hover:text-white group flex items-center px-2 py-2 text-sm font-medium rounded-md">
                                 <i class="fas fa-cog mr-3"></i>
                                 Settings
                             </a>
                         </nav>
                     </div>
-                    <div class="flex-shrink-0 flex border-t border-blue-500 p-4">
+                    <div class="flex-shrink-0 flex border-t border-slate-700 p-4">
                         <div class="flex items-center">
                             <div class="flex-shrink-0">
-                                <div class="h-8 w-8 rounded-full bg-blue-500 flex items-center justify-center text-white font-medium">
+                                <div class="h-8 w-8 rounded-full bg-slate-700 flex items-center justify-center text-white font-medium">
                                     {{ substr(Auth::user()->name, 0, 1) }}
                                 </div>
                             </div>
                             <div class="ml-3">
                                 <p class="text-sm font-medium text-white">{{ Auth::user()->name }}</p>
-                                <p class="text-xs font-medium text-blue-200">{{ Auth::user()->email }}</p>
+                                <p class="text-xs font-medium text-slate-300">{{ Auth::user()->email }}</p>
                             </div>
                         </div>
                     </div>
@@ -71,7 +71,7 @@
             <!-- Mobile sidebar overlay -->
             <div class="md:hidden fixed inset-0 flex z-40 hidden" id="mobile-sidebar-overlay">
                 <div class="fixed inset-0 bg-gray-600 bg-opacity-75" id="mobile-sidebar-backdrop"></div>
-                <div class="relative flex-1 flex flex-col max-w-xs w-full bg-blue-600">
+                <div class="relative flex-1 flex flex-col max-w-xs w-full bg-slate-900">
                     <div class="absolute top-0 right-0 -mr-12 pt-2">
                         <button type="button" class="ml-1 flex items-center justify-center h-10 w-10 rounded-full focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white" id="mobile-sidebar-close">
                             <span class="sr-only">Close sidebar</span>
@@ -86,38 +86,38 @@
                             </a>
                         </div>
                         <nav class="mt-8 px-2 space-y-1">
-                            <a href="{{ route('dashboard') }}" class="{{ request()->routeIs('dashboard') ? 'bg-blue-700 text-white' : 'text-blue-100 hover:bg-blue-700 hover:text-white' }} group flex items-center px-2 py-2 text-sm font-medium rounded-md">
+                            <a href="{{ route('dashboard') }}" class="{{ request()->routeIs('dashboard') ? 'bg-slate-800 text-white' : 'text-slate-200 hover:bg-slate-800 hover:text-white' }} group flex items-center px-2 py-2 text-sm font-medium rounded-md">
                                 <i class="fas fa-tachometer-alt mr-3"></i>
                                 Dashboard
                             </a>
-                            <a href="#" class="text-blue-100 hover:bg-blue-700 hover:text-white group flex items-center px-2 py-2 text-sm font-medium rounded-md">
+                            <a href="#" class="text-slate-200 hover:bg-slate-800 hover:text-white group flex items-center px-2 py-2 text-sm font-medium rounded-md">
                                 <i class="fas fa-users mr-3"></i>
                                 Users
                             </a>
-                            <a href="#" class="text-blue-100 hover:bg-blue-700 hover:text-white group flex items-center px-2 py-2 text-sm font-medium rounded-md">
+                            <a href="{{ route('admin.scholarships.index') }}" class="{{ request()->routeIs('admin.scholarships.*') ? 'bg-slate-800 text-white' : 'text-slate-200 hover:bg-slate-800 hover:text-white' }} group flex items-center px-2 py-2 text-sm font-medium rounded-md">
                                 <i class="fas fa-graduation-cap mr-3"></i>
                                 Scholarships
                             </a>
-                            <a href="#" class="text-blue-100 hover:bg-blue-700 hover:text-white group flex items-center px-2 py-2 text-sm font-medium rounded-md">
+                            <a href="#" class="text-slate-200 hover:bg-slate-800 hover:text-white group flex items-center px-2 py-2 text-sm font-medium rounded-md">
                                 <i class="fas fa-chart-bar mr-3"></i>
                                 Reports
                             </a>
-                            <a href="#" class="text-blue-100 hover:bg-blue-700 hover:text-white group flex items-center px-2 py-2 text-sm font-medium rounded-md">
+                            <a href="#" class="text-slate-200 hover:bg-slate-800 hover:text-white group flex items-center px-2 py-2 text-sm font-medium rounded-md">
                                 <i class="fas fa-cog mr-3"></i>
                                 Settings
                             </a>
                         </nav>
                     </div>
-                    <div class="flex-shrink-0 flex border-t border-blue-500 p-4">
+                    <div class="flex-shrink-0 flex border-t border-slate-700 p-4">
                         <div class="flex items-center">
                             <div class="flex-shrink-0">
-                                <div class="h-8 w-8 rounded-full bg-blue-500 flex items-center justify-center text-white font-medium">
+                                <div class="h-8 w-8 rounded-full bg-slate-700 flex items-center justify-center text-white font-medium">
                                     {{ substr(Auth::user()->name, 0, 1) }}
                                 </div>
                             </div>
                             <div class="ml-3">
                                 <p class="text-sm font-medium text-white">{{ Auth::user()->name }}</p>
-                                <p class="text-xs font-medium text-blue-200">{{ Auth::user()->email }}</p>
+                                <p class="text-xs font-medium text-slate-300">{{ Auth::user()->email }}</p>
                             </div>
                         </div>
                     </div>
@@ -129,7 +129,7 @@
             <div class="flex flex-col w-0 flex-1 overflow-hidden md:ml-64">
                 <!-- Top bar -->
                 <div class="sticky top-0 z-10 flex-shrink-0 flex h-16 bg-white shadow">
-                    <button type="button" class="px-4 border-r border-gray-200 text-gray-500 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-blue-500 md:hidden" id="mobile-sidebar-button">
+                    <button type="button" class="px-4 border-r border-gray-200 text-gray-500 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-blue-900 md:hidden" id="mobile-sidebar-button">
                         <span class="sr-only">Open sidebar</span>
                         <i class="fas fa-bars"></i>
                     </button>
@@ -149,9 +149,9 @@
                             <!-- Profile dropdown -->
                             <div class="ml-3 relative">
                                 <div>
-                                    <button type="button" class="max-w-xs bg-white flex items-center text-sm rounded-full focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500" id="user-menu-button" aria-expanded="false" aria-haspopup="true">
+                                    <button type="button" class="max-w-xs bg-white flex items-center text-sm rounded-full focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-900" id="user-menu-button" aria-expanded="false" aria-haspopup="true">
                                         <span class="sr-only">Open user menu</span>
-                                        <div class="h-8 w-8 rounded-full bg-blue-500 flex items-center justify-center text-white font-medium">
+                                        <div class="h-8 w-8 rounded-full bg-blue-900 flex items-center justify-center text-white font-medium">
                                             {{ substr(Auth::user()->name, 0, 1) }}
                                         </div>
                                     </button>

@@ -11,16 +11,18 @@
 
                 <!-- Desktop Navigation -->
                 <div class="hidden sm:ml-6 sm:flex sm:items-center sm:gap-8">
+                    <!-- Scholarships Link -->
+                    <a href="{{ route('scholarships') }}" class="{{ request()->routeIs('scholarships') ? 'border-blue-800 text-blue-900' : 'border-transparent text-gray-600' }} inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium hover:border-slate-400 hover:text-blue-900">
+                        <i class="fas fa-graduation-cap mr-1"></i>Scholarships
+                    </a>
+
                     <!-- Resources Dropdown -->
                     <div class="relative flex h-full items-center group">
-                        <button type="button" class="{{ request()->routeIs('scholarships', 'eligibility', 'requirements', 'stats') ? 'border-blue-800 text-blue-900' : 'border-transparent text-gray-600' }} hover:border-slate-400 hover:text-blue-900 inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium">
+                        <button type="button" class="{{ request()->routeIs('eligibility', 'requirements', 'stats') ? 'border-blue-800 text-blue-900' : 'border-transparent text-gray-600' }} hover:border-slate-400 hover:text-blue-900 inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium">
                             <i class="fas fa-book mr-1"></i>Resources
                         </button>
                         <div class="hidden group-hover:block group-focus-within:block absolute top-full left-0 mt-1 w-48 rounded-md border border-slate-200 bg-white shadow-lg z-10">
-                            <a href="{{ route('scholarships') }}" class="block px-4 py-2 text-sm text-gray-700 hover:bg-blue-50 first:rounded-t-md {{ request()->routeIs('scholarships') ? 'bg-blue-200 text-blue-900 font-semibold' : '' }}">
-                                <i class="fas fa-graduation-cap mr-2 w-4"></i>Scholarships
-                            </a>
-                            <a href="{{ route('eligibility') }}" class="block px-4 py-2 text-sm text-gray-700 hover:bg-blue-50 {{ request()->routeIs('eligibility') ? 'bg-blue-200 text-blue-900 font-semibold' : '' }}">
+                            <a href="{{ route('eligibility') }}" class="block px-4 py-2 text-sm text-gray-700 hover:bg-blue-50 first:rounded-t-md {{ request()->routeIs('eligibility') ? 'bg-blue-200 text-blue-900 font-semibold' : '' }}">
                                 <i class="fas fa-list-check mr-2 w-4"></i>Eligibility
                             </a>
                             <a href="{{ route('requirements') }}" class="block px-4 py-2 text-sm text-gray-700 hover:bg-blue-50 {{ request()->routeIs('requirements') ? 'bg-blue-200 text-blue-900 font-semibold' : '' }}">
@@ -62,8 +64,20 @@
 
             <!-- Desktop Auth Links -->
             <div class="hidden sm:ml-6 sm:flex sm:items-center sm:space-x-4">
-                <a href="{{ route('login') }}" class="px-3 py-2 rounded-md text-sm font-medium text-gray-600 hover:text-blue-900">Log in</a>
-                <a href="{{ route('register') }}" class="rounded-md bg-blue-800 px-3 py-2 text-sm font-medium text-white hover:bg-blue-900">Sign up</a>
+                @auth
+                    <a href="{{ route('dashboard') }}" class="px-3 py-2 rounded-md text-sm font-medium text-gray-600 hover:text-blue-900">
+                        <i class="fas fa-th-large mr-1"></i>Dashboard
+                    </a>
+                    <form method="POST" action="{{ route('logout') }}" class="inline">
+                        @csrf
+                        <button type="submit" class="px-3 py-2 rounded-md text-sm font-medium text-gray-600 hover:text-blue-900">
+                            <i class="fas fa-sign-out-alt mr-1"></i>Logout
+                        </button>
+                    </form>
+                @else
+                    <a href="{{ route('login') }}" class="px-3 py-2 rounded-md text-sm font-medium text-gray-600 hover:text-blue-900">Log in</a>
+                    <a href="{{ route('register') }}" class="rounded-md bg-blue-800 px-3 py-2 text-sm font-medium text-white hover:bg-blue-900">Sign up</a>
+                @endauth
             </div>
 
             <!-- Mobile Menu Button -->
@@ -111,8 +125,20 @@
         <!-- Mobile Auth Links -->
         <div class="border-t border-slate-200 pt-4 pb-3">
             <div class="flex items-center px-4 space-x-3">
-                <a href="{{ route('login') }}" class="block rounded-md px-3 py-2 text-base font-medium text-gray-600 hover:text-blue-900">Log in</a>
-                <a href="{{ route('register') }}" class="block rounded-md bg-blue-800 px-3 py-2 text-base font-medium text-white hover:bg-blue-900">Sign up</a>
+                @auth
+                    <a href="{{ route('dashboard') }}" class="block rounded-md px-3 py-2 text-base font-medium text-gray-600 hover:text-blue-900">
+                        <i class="fas fa-th-large mr-1"></i>Dashboard
+                    </a>
+                    <form method="POST" action="{{ route('logout') }}" class="inline">
+                        @csrf
+                        <button type="submit" class="block rounded-md px-3 py-2 text-base font-medium text-gray-600 hover:text-blue-900">
+                            <i class="fas fa-sign-out-alt mr-1"></i>Logout
+                        </button>
+                    </form>
+                @else
+                    <a href="{{ route('login') }}" class="block rounded-md px-3 py-2 text-base font-medium text-gray-600 hover:text-blue-900">Log in</a>
+                    <a href="{{ route('register') }}" class="block rounded-md bg-blue-800 px-3 py-2 text-base font-medium text-white hover:bg-blue-900">Sign up</a>
+                @endauth
             </div>
         </div>
     </div>

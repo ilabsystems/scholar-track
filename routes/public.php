@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\Public\PublicController;
+use App\Http\Controllers\Public\ScholarshipController;
 use App\Http\Controllers\Public\WelcomeController;
 use Illuminate\Support\Facades\Route;
 
@@ -14,3 +15,6 @@ Route::get('/stats', [PublicController::class, 'stats'])->name('stats');
 Route::get('/faq', [PublicController::class, 'faq'])->name('faq');
 Route::get('/eligibility', [PublicController::class, 'eligibility'])->name('eligibility');
 Route::get('/track', [PublicController::class, 'track'])->name('track');
+
+// Authenticated routes for favorites
+Route::middleware('auth')->post('/scholarships/{scholarship}/favorite', [ScholarshipController::class, 'favorite'])->name('scholarships.favorite');
