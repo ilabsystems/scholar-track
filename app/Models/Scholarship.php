@@ -51,4 +51,12 @@ class Scholarship extends Model
     {
         return $this->belongsToMany(User::class, 'scholarship_favorites');
     }
+
+    /**
+     * Get the scholars awarded this scholarship.
+     */
+    public function scholarProfiles(): \Illuminate\Database\Eloquent\Relations\HasMany
+    {
+        return $this->hasMany(ScholarProfile::class);
+    }
 }

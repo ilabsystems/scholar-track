@@ -64,4 +64,20 @@ class User extends Authenticatable
     {
         return $this->belongsToMany(Scholarship::class, 'scholarship_favorites');
     }
+
+    /**
+     * Get the applicant profile for this user.
+     */
+    public function applicantProfile(): HasMany
+    {
+        return $this->hasMany(ApplicantProfile::class);
+    }
+
+    /**
+     * Get the scholar profile for this user.
+     */
+    public function scholarProfile(): HasMany
+    {
+        return $this->hasMany(ScholarProfile::class);
+    }
 }

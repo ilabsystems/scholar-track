@@ -29,11 +29,11 @@ This application is a Laravel application and its main Laravel ecosystems packag
 - Use descriptive names for variables and methods. For example, `isRegisteredForDiscounts`, not `discount()`.
 - Check for existing components to reuse before writing a new one.
 - For public-facing UI, use a **2-tone color system** with white/light and dark slate:
-  - **Light sections**: `bg-white` or `bg-slate-50` with `text-gray-900` or `text-slate-900` for headings, `text-gray-600` or `text-slate-600` for body text
-  - **Dark sections**: `bg-slate-900` with `text-white` for headings, `text-slate-300` for body text, `text-slate-300` or `text-white` for icons
-  - **Accents on light**: Use `blue-900` or `blue-800` for buttons, links, and interactive elements
-  - **Accents on dark**: Use `white`, `text-blue-400`, or keep icons/text `white`
-  - Keep it simple: alternate between light and dark sections for visual hierarchy without using multiple colors
+    - **Light sections**: `bg-white` or `bg-slate-50` with `text-gray-900` or `text-slate-900` for headings, `text-gray-600` or `text-slate-600` for body text
+    - **Dark sections**: `bg-slate-900` with `text-white` for headings, `text-slate-300` for body text, `text-slate-300` or `text-white` for icons
+    - **Accents on light**: Use `blue-900` or `blue-800` for buttons, links, and interactive elements
+    - **Accents on dark**: Use `white`, `text-blue-400`, or keep icons/text `white`
+    - Keep it simple: alternate between light and dark sections for visual hierarchy without using multiple colors
 - Do not use gradient backgrounds. Use solid colors instead for better clarity and consistency with the design system. Avoid `gradient-to-*`, `from-*`, and `to-*` utilities.
 - Do not use multiple accent colors (e.g., green, purple, orange). Stick to white, slate, and blue tones only.
 
@@ -158,6 +158,17 @@ protected function isAccessible(User $user, ?string $path = null): bool
 - Avoid `DB::`; prefer `Model::query()`. Generate code that leverages Laravel's ORM capabilities rather than bypassing them.
 - Generate code that prevents N+1 query problems by using eager loading.
 - Use Laravel's query builder for very complex database operations.
+
+### Database Migrations & Seeding
+
+- **NEVER use `migrate:fresh`, `migrate:reset`, or similar commands that reset the database** unless explicitly authorized by the user.
+- When database changes are needed after new migrations are created:
+    1. Ask the user if a fresh migration is truly necessary (it usually isn't)
+    2. Prefer using the `tinker` tool or Laravel Boost tools to manually update the database to reflect what seeders should have created
+    3. Update seeders to include the new data so it's reproducible
+    4. Run only `php artisan migrate` to apply new migrations incrementally
+- Use seeders to set up test data and static data (roles, permissions, demo accounts, etc.)
+- Keep seeders maintainable and idempotent where possible
 
 ### Model Creation
 

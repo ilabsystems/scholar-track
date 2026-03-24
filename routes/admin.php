@@ -9,6 +9,11 @@ Route::middleware('auth')->group(function () {
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 
+    Route::name('profile.applicant.')->prefix('profile/applicant')->group(function () {
+        Route::get('/', [ProfileController::class, 'editApplicant'])->name('edit');
+        Route::patch('/', [ProfileController::class, 'updateApplicant'])->name('update');
+    });
+
     Route::name('admin.scholarships.')->prefix('admin/scholarships')->group(function () {
         Route::get('/', [ScholarshipController::class, 'index'])->name('index');
         Route::get('/create', [ScholarshipController::class, 'create'])->name('create');
