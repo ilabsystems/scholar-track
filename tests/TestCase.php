@@ -2,8 +2,8 @@
 
 namespace Tests;
 
+use Database\Seeders\RolesAndPermissionsSeeder;
 use Illuminate\Foundation\Testing\TestCase as BaseTestCase;
-use Spatie\Permission\Models\Role;
 
 abstract class TestCase extends BaseTestCase
 {
@@ -11,12 +11,7 @@ abstract class TestCase extends BaseTestCase
     {
         parent::setUp();
 
-        // Create roles for testing
-        Role::firstOrCreate(['name' => 'admin', 'guard_name' => 'web']);
-        Role::firstOrCreate(['name' => 'applicant', 'guard_name' => 'web']);
-        Role::firstOrCreate(['name' => 'staff', 'guard_name' => 'web']);
-        Role::firstOrCreate(['name' => 'reviewer', 'guard_name' => 'web']);
-        Role::firstOrCreate(['name' => 'scholar', 'guard_name' => 'web']);
-        Role::firstOrCreate(['name' => 'finance', 'guard_name' => 'web']);
+        // Seed roles and permissions after migrations run
+        $this->seed(RolesAndPermissionsSeeder::class);
     }
 }

@@ -6,6 +6,7 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 use Illuminate\Database\Eloquent\Relations\HasMany;
+use Illuminate\Database\Eloquent\Relations\HasOne;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use Spatie\Permission\Traits\HasRoles;
@@ -68,9 +69,9 @@ class User extends Authenticatable
     /**
      * Get the applicant profile for this user.
      */
-    public function applicantProfile(): HasMany
+    public function applicantProfile(): HasOne
     {
-        return $this->hasMany(ApplicantProfile::class);
+        return $this->hasOne(ApplicantProfile::class);
     }
 
     /**

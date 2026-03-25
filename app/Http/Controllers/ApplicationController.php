@@ -15,7 +15,17 @@ class ApplicationController extends Controller
      */
     public function create(Scholarship $scholarship): View
     {
-        $this->authorize('create', [Application::class, $scholarship]);
+        if (! auth()->user()->hasRole('applicant')) {
+            abort(403);
+        }
+
+        if ($scholarship->isDeadlinePassed()) {
+            abort(422, 'This scholarship deadline has passed.');
+        }
+
+        if ($scholarship->userHasApplied(auth()->user())) {
+            abort(422, 'You have already applied to this scholarship.');
+        }
 
         $userApplicantProfile = auth()->user()->applicantProfile;
 
@@ -82,7 +92,9 @@ class ApplicationController extends Controller
      */
     public function show(Application $application): View
     {
-        $this->authorize('view', $application);
+        if ($application->user_id !== auth()->id()) {
+            abort(403);
+        }
 
         $application->load(['scholarship', 'applicantProfile', 'assignee', 'reviewer']);
 
@@ -96,7 +108,9 @@ class ApplicationController extends Controller
      */
     public function withdraw(Application $application): RedirectResponse
     {
-        $this->authorize('update', $application);
+        if ($application->user_id !== auth()->id()) {
+            abort(403);
+        }
 
         if (! $application->canWithdraw()) {
             return back()->with('error', 'This application cannot be withdrawn.');
