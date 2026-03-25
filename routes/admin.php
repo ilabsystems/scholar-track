@@ -1,5 +1,7 @@
 <?php
 
+use App\Http\Controllers\Admin\PermissionController;
+use App\Http\Controllers\Admin\RoleController;
 use App\Http\Controllers\Admin\ScholarshipController;
 use App\Http\Controllers\Admin\UserController;
 use App\Http\Controllers\ProfileController;
@@ -24,6 +26,9 @@ Route::middleware('auth')->group(function () {
         Route::put('/{scholarship}', [ScholarshipController::class, 'update'])->name('update');
         Route::delete('/{scholarship}', [ScholarshipController::class, 'destroy'])->name('destroy');
     });
+
+    Route::resource('admin/roles', RoleController::class)->names('admin.roles');
+    Route::resource('admin/permissions', PermissionController::class)->names('admin.permissions');
 
     Route::name('admin.users.')->prefix('admin/users')->group(function () {
         Route::get('/', [UserController::class, 'index'])->name('index');
