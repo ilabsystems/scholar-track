@@ -91,8 +91,12 @@ Routes split by purpose (all required in `routes/web.php`):
 
 ### Database
 
-- Never use `migrate:fresh` or `migrate:reset` without explicit approval
-- Use only `php artisan migrate` for incremental changes
+⚠️ **CRITICAL: NEVER RUN DESTRUCTIVE COMMANDS** ⚠️
+
+- **DO NOT** use `migrate:fresh`, `migrate:reset`, `db:wipe`, or any destructive database operations
+- These commands **DELETE ALL DATA** in the database permanently
+- Use only `php artisan migrate` for incremental changes (this is safe and reversible)
+- If data is accidentally deleted, it cannot be recovered
 - When creating models, also create factories and seeders
 
 ### Artisan Commands
