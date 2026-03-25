@@ -25,6 +25,7 @@ class ApplicationFactory extends Factory
             'applicant_profile_id' => null,
             'status' => 'draft',
             'cover_letter' => fake()->optional()->paragraphs(2, true),
+            'essay_response' => fake()->optional()->paragraphs(3, true),
             'documents' => null,
             'score' => null,
             'remarks' => null,

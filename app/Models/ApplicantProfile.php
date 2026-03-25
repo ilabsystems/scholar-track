@@ -23,8 +23,6 @@ class ApplicantProfile extends Model
         'education_level',
         'employment_status',
         'household_income',
-        'essay_response',
-        'documents',
     ];
 
     protected function casts(): array
@@ -33,7 +31,6 @@ class ApplicantProfile extends Model
             'date_of_birth' => 'date',
             'gpa' => 'decimal:2',
             'household_income' => 'decimal:2',
-            'documents' => 'array',
         ];
     }
 

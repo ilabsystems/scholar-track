@@ -17,6 +17,7 @@ class Application extends Model
         'applicant_profile_id',
         'status',
         'cover_letter',
+        'essay_response',
         'documents',
         'score',
         'remarks',

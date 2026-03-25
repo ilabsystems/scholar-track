@@ -30,7 +30,6 @@ class ApplicantProfileUpdateRequest extends FormRequest
             'education_level' => ['nullable', 'string', 'max:255'],
             'employment_status' => ['nullable', 'string', 'max:255'],
             'household_income' => ['nullable', 'numeric', 'min:0'],
-            'essay_response' => ['nullable', 'string', 'max:5000'],
         ];
     }
 

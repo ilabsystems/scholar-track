@@ -27,8 +27,6 @@ class ApplicantProfileFactory extends Factory
             'education_level' => $this->faker->randomElement(['High School', 'Associate Degree', 'Bachelor Degree']),
             'employment_status' => $this->faker->randomElement(['Student', 'Unemployed', 'Part-time', 'Full-time']),
             'household_income' => $this->faker->randomFloat(2, 15000, 75000),
-            'essay_response' => $this->faker->paragraphs(3, true),
-            'documents' => ['transcript', 'recommendation_letter', 'essay'],
         ];
     }
 }

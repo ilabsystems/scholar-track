@@ -129,6 +129,32 @@
                     </div>
                 </div>
 
+                <!-- Essay Response Section -->
+                <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg">
+                    <div class="px-6 py-4 bg-slate-50 border-b border-gray-200">
+                        <h3 class="text-lg font-semibold text-gray-900">
+                            {{ __('Essay Response') }}
+                        </h3>
+                    </div>
+                    <div class="px-6 py-4">
+                        <label for="essay_response" class="block text-sm font-medium text-gray-700">
+                            {{ __('Please write a short essay about your academic goals and aspirations') }}
+                        </label>
+                        <textarea
+                            id="essay_response"
+                            name="essay_response"
+                            rows="8"
+                            maxlength="5000"
+                            class="mt-2 block w-full border-gray-300 rounded-md shadow-sm focus:border-blue-500 focus:ring-blue-500 @error('essay_response') border-red-500 @enderror"
+                            placeholder="Share your academic goals, personal achievements, and why you're a strong candidate for this scholarship..."
+                        >{{ old('essay_response') }}</textarea>
+                        <p class="mt-2 text-sm text-gray-500">Maximum 5000 characters</p>
+                        @error('essay_response')
+                            <p class="mt-2 text-sm text-red-600">{{ $message }}</p>
+                        @enderror
+                    </div>
+                </div>
+
                 <!-- Documents Section (Future Enhancement) -->
                 <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg">
                     <div class="px-6 py-4 bg-slate-50 border-b border-gray-200">

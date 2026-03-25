@@ -45,6 +45,7 @@ class StoreApplicationRequest extends FormRequest
     {
         return [
             'cover_letter' => ['required', 'string', 'max:5000'],
+            'essay_response' => ['required', 'string', 'max:5000'],
             'applicant_profile_id' => ['nullable', 'exists:applicant_profiles,id'],
             'documents' => ['nullable', 'array'],
         ];
