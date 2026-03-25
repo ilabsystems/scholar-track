@@ -42,13 +42,13 @@
                                 <i class="fas fa-graduation-cap mr-3"></i>
                                 Scholarships
                             </a>
-                            <a href="#" class="text-slate-200 hover:bg-slate-800 hover:text-white group flex items-center px-2 py-2 text-sm font-medium rounded-md">
-                                <i class="fas fa-chart-bar mr-3"></i>
-                                Reports
+                            <a href="{{ route('admin.roles.index') }}" class="{{ request()->routeIs('admin.roles.*') ? 'bg-slate-800 text-white' : 'text-slate-200 hover:bg-slate-800 hover:text-white' }} group flex items-center px-2 py-2 text-sm font-medium rounded-md">
+                                <i class="fas fa-shield-alt mr-3"></i>
+                                Roles
                             </a>
-                            <a href="#" class="text-slate-200 hover:bg-slate-800 hover:text-white group flex items-center px-2 py-2 text-sm font-medium rounded-md">
-                                <i class="fas fa-cog mr-3"></i>
-                                Settings
+                            <a href="{{ route('admin.permissions.index') }}" class="{{ request()->routeIs('admin.permissions.*') ? 'bg-slate-800 text-white' : 'text-slate-200 hover:bg-slate-800 hover:text-white' }} group flex items-center px-2 py-2 text-sm font-medium rounded-md">
+                                <i class="fas fa-lock mr-3"></i>
+                                Permissions
                             </a>
                         </nav>
                     </div>

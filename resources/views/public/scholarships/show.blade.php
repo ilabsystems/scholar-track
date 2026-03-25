@@ -127,9 +127,15 @@
                     <p class="text-sm text-gray-600">Ready to apply for this scholarship?</p>
                 </div>
                 @if($scholarship->status === 'active' && $scholarship->deadline->isFuture())
-                    <a href="{{ route('register') }}" class="inline-flex items-center px-6 py-3 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition font-medium">
-                        <i class="fas fa-edit mr-2"></i>Apply Now
-                    </a>
+                    @if(auth()->check())
+                        <a href="{{ route('scholarships.apply.create', $scholarship) }}" class="inline-flex items-center px-6 py-3 bg-blue-900 text-white rounded-lg hover:bg-blue-800 transition font-medium">
+                            <i class="fas fa-edit mr-2"></i>Apply Now
+                        </a>
+                    @else
+                        <a href="{{ route('register') }}" class="inline-flex items-center px-6 py-3 bg-blue-900 text-white rounded-lg hover:bg-blue-800 transition font-medium">
+                            <i class="fas fa-user-plus mr-2"></i>Register to Apply
+                        </a>
+                    @endif
                 @else
                     <div class="inline-flex items-center px-6 py-3 bg-gray-200 text-gray-600 rounded-lg cursor-not-allowed font-medium">
                         <i class="fas fa-ban mr-2"></i>Applications Closed

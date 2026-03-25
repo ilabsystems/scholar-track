@@ -101,8 +101,16 @@
 
                 <!-- Page content -->
                 <main class="flex-1 relative overflow-y-auto focus:outline-none">
+                    @if(isset($header))
+                        <div class="bg-white shadow">
+                            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
+                                {{ $header }}
+                            </div>
+                        </div>
+                    @endif
                     <div class="py-6">
                         <div class="max-w-7xl mx-auto px-4 sm:px-6 px-8">
+                            {{ $slot ?? '' }}
                             @yield('content')
                         </div>
                     </div>

@@ -128,14 +128,20 @@
                 <div>
                     <p class="text-sm text-gray-600">Ready to apply for this scholarship?</p>
                 </div>
-                @if($scholarship->status === 'active' && $scholarship->deadline->isFuture())
-                    <a href="#" class="inline-flex items-center px-6 py-3 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition font-medium">
-                        <i class="fas fa-edit mr-2"></i>Apply Now
-                    </a>
+                @if(auth()->check())
+                    @if($scholarship->status === 'active' && $scholarship->deadline->isFuture())
+                        <a href="{{ route('scholarships.apply.create', $scholarship) }}" class="inline-flex items-center px-6 py-3 bg-blue-900 text-white rounded-lg hover:bg-blue-800 transition font-medium">
+                            <i class="fas fa-edit mr-2"></i>Apply Now
+                        </a>
+                    @else
+                        <div class="inline-flex items-center px-6 py-3 bg-gray-200 text-gray-600 rounded-lg cursor-not-allowed font-medium">
+                            <i class="fas fa-ban mr-2"></i>Applications Closed
+                        </div>
+                    @endif
                 @else
-                    <div class="inline-flex items-center px-6 py-3 bg-gray-200 text-gray-600 rounded-lg cursor-not-allowed font-medium">
-                        <i class="fas fa-ban mr-2"></i>Applications Closed
-                    </div>
+                    <a href="{{ route('login') }}" class="inline-flex items-center px-6 py-3 bg-blue-900 text-white rounded-lg hover:bg-blue-800 transition font-medium">
+                        <i class="fas fa-sign-in-alt mr-2"></i>Sign In to Apply
+                    </a>
                 @endif
             </div>
         </div>
