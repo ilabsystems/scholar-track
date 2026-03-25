@@ -80,4 +80,28 @@ class User extends Authenticatable
     {
         return $this->hasMany(ScholarProfile::class);
     }
+
+    /**
+     * Get the applications submitted by this user.
+     */
+    public function applications(): HasMany
+    {
+        return $this->hasMany(Application::class);
+    }
+
+    /**
+     * Get the applications assigned to this user for review.
+     */
+    public function assignedApplications(): HasMany
+    {
+        return $this->hasMany(Application::class, 'assigned_to');
+    }
+
+    /**
+     * Get the applications reviewed by this user.
+     */
+    public function reviewedApplications(): HasMany
+    {
+        return $this->hasMany(Application::class, 'reviewed_by');
+    }
 }

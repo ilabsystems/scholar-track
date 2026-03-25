@@ -6,6 +6,7 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Relations\BelongsToMany;
+use Illuminate\Database\Eloquent\Relations\HasMany;
 
 /** @use HasFactory<\Database\Factories\ScholarshipFactory> */
 class Scholarship extends Model
@@ -55,8 +56,16 @@ class Scholarship extends Model
     /**
      * Get the scholars awarded this scholarship.
      */
-    public function scholarProfiles(): \Illuminate\Database\Eloquent\Relations\HasMany
+    public function scholarProfiles(): HasMany
     {
         return $this->hasMany(ScholarProfile::class);
+    }
+
+    /**
+     * Get the applications for this scholarship.
+     */
+    public function applications(): HasMany
+    {
+        return $this->hasMany(Application::class);
     }
 }
