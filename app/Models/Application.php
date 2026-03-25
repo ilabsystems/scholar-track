@@ -85,4 +85,42 @@ class Application extends Model
     {
         return $query->whereIn('status', ['submitted', 'under_review']);
     }
+
+    public function canWithdraw(): bool
+    {
+        return in_array($this->status, ['draft', 'submitted', 'under_review']);
+    }
+
+    public function canSubmit(): bool
+    {
+        return ! $this->scholarship->isDeadlinePassed();
+    }
+
+    public function getStatusLabel(): string
+    {
+        $labels = [
+            'draft' => 'Draft',
+            'submitted' => 'Submitted',
+            'under_review' => 'Under Review',
+            'approved' => 'Approved',
+            'rejected' => 'Rejected',
+            'withdrawn' => 'Withdrawn',
+        ];
+
+        return $labels[$this->status] ?? $this->status;
+    }
+
+    public function getStatusColor(): string
+    {
+        $colors = [
+            'draft' => 'gray',
+            'submitted' => 'blue',
+            'under_review' => 'yellow',
+            'approved' => 'green',
+            'rejected' => 'red',
+            'withdrawn' => 'slate',
+        ];
+
+        return $colors[$this->status] ?? 'gray';
+    }
 }

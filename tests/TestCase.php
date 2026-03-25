@@ -13,7 +13,10 @@ abstract class TestCase extends BaseTestCase
 
         // Create roles for testing
         Role::firstOrCreate(['name' => 'admin', 'guard_name' => 'web']);
+        Role::firstOrCreate(['name' => 'applicant', 'guard_name' => 'web']);
         Role::firstOrCreate(['name' => 'staff', 'guard_name' => 'web']);
+        Role::firstOrCreate(['name' => 'reviewer', 'guard_name' => 'web']);
         Role::firstOrCreate(['name' => 'scholar', 'guard_name' => 'web']);
+        Role::firstOrCreate(['name' => 'finance', 'guard_name' => 'web']);
     }
 }

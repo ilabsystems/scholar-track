@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\ApplicationController;
 use App\Http\Controllers\ScholarshipsController;
 use Illuminate\Support\Facades\Route;
 
@@ -20,6 +21,17 @@ Route::get('dashboard', function () {
 Route::middleware(['auth', 'verified'])->group(function () {
     Route::get('/my-scholarships', [ScholarshipsController::class, 'index'])->name('scholarships.index');
     Route::get('/scholarships/{scholarship}', [ScholarshipsController::class, 'show'])->name('scholarships.show');
+
+    // Application routes
+    Route::name('applications.')->prefix('applications')->group(function () {
+        Route::get('/', [ApplicationController::class, 'index'])->name('index');
+        Route::get('{application}', [ApplicationController::class, 'show'])->name('show');
+        Route::post('{application}/withdraw', [ApplicationController::class, 'withdraw'])->name('withdraw');
+    });
+
+    // Apply to scholarship routes
+    Route::get('/scholarships/{scholarship}/apply', [ApplicationController::class, 'create'])->name('scholarships.apply.create');
+    Route::post('/scholarships/{scholarship}/apply', [ApplicationController::class, 'store'])->name('scholarships.apply.store');
 });
 
 require __DIR__.'/auth.php';

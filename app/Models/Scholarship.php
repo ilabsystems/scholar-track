@@ -68,4 +68,20 @@ class Scholarship extends Model
     {
         return $this->hasMany(Application::class);
     }
+
+    /**
+     * Check if the scholarship deadline has passed.
+     */
+    public function isDeadlinePassed(): bool
+    {
+        return $this->deadline?->isPast() ?? false;
+    }
+
+    /**
+     * Check if a user has already applied to this scholarship.
+     */
+    public function userHasApplied(User $user): bool
+    {
+        return $this->applications()->where('user_id', $user->id)->exists();
+    }
 }
