@@ -61,6 +61,8 @@ class StoreApplicationRequest extends FormRequest
         return [
             'cover_letter.required' => 'Please provide a cover letter for your application.',
             'cover_letter.max' => 'Your cover letter cannot exceed 5000 characters.',
+            'essay_response.required' => 'Please provide an essay response for your application.',
+            'essay_response.max' => 'Your essay response cannot exceed 5000 characters.',
             'applicant_profile_id.exists' => 'The selected profile does not exist.',
         ];
     }

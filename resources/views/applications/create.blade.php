@@ -145,7 +145,7 @@
                             name="essay_response"
                             rows="8"
                             maxlength="5000"
-                            class="mt-2 block w-full border-gray-300 rounded-md shadow-sm focus:border-blue-500 focus:ring-blue-500 @error('essay_response') border-red-500 @enderror"
+                            class="mt-2 block w-full px-4 py-2 border border-gray-300 rounded-md shadow-sm focus:border-blue-500 focus:ring-blue-500 @error('essay_response') border-red-500 @enderror"
                             placeholder="Share your academic goals, personal achievements, and why you're a strong candidate for this scholarship..."
                         >{{ old('essay_response') }}</textarea>
                         <p class="mt-2 text-sm text-gray-500">Maximum 5000 characters</p>
