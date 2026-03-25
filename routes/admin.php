@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\Admin\ScholarshipController;
+use App\Http\Controllers\Admin\UserController;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 
@@ -22,5 +23,11 @@ Route::middleware('auth')->group(function () {
         Route::get('/{scholarship}/edit', [ScholarshipController::class, 'edit'])->name('edit');
         Route::put('/{scholarship}', [ScholarshipController::class, 'update'])->name('update');
         Route::delete('/{scholarship}', [ScholarshipController::class, 'destroy'])->name('destroy');
+    });
+
+    Route::name('admin.users.')->prefix('admin/users')->group(function () {
+        Route::get('/', [UserController::class, 'index'])->name('index');
+        Route::get('/{user}/edit-roles', [UserController::class, 'editRoles'])->name('edit-roles');
+        Route::post('/{user}/roles', [UserController::class, 'updateRoles'])->name('update-roles');
     });
 });

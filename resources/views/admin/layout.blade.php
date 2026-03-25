@@ -34,7 +34,7 @@
                                 <i class="fas fa-tachometer-alt mr-3"></i>
                                 Dashboard
                             </a>
-                            <a href="#" class="text-slate-200 hover:bg-slate-800 hover:text-white group flex items-center px-2 py-2 text-sm font-medium rounded-md">
+                            <a href="{{ route('admin.users.index') }}" class="{{ request()->routeIs('admin.users.*') ? 'bg-slate-800 text-white' : 'text-slate-200 hover:bg-slate-800 hover:text-white' }} group flex items-center px-2 py-2 text-sm font-medium rounded-md">
                                 <i class="fas fa-users mr-3"></i>
                                 Users
                             </a>
