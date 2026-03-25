@@ -29,20 +29,6 @@ class ApplicantProfileFactory extends Factory
             'household_income' => $this->faker->randomFloat(2, 15000, 75000),
             'essay_response' => $this->faker->paragraphs(3, true),
             'documents' => ['transcript', 'recommendation_letter', 'essay'],
-            'application_status' => 'pending',
-            'submitted_at' => null,
-            'remarks' => null,
         ];
-    }
-
-    /**
-     * Indicate that the application has been submitted.
-     */
-    public function submitted(): static
-    {
-        return $this->state(fn (array $attributes) => [
-            'application_status' => 'submitted',
-            'submitted_at' => now()->format('Y-m-d'),
-        ]);
     }
 }

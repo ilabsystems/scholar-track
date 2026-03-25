@@ -5,6 +5,7 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
+use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Database\Eloquent\Relations\HasOne;
 
 class ApplicantProfile extends Model
@@ -24,16 +25,12 @@ class ApplicantProfile extends Model
         'household_income',
         'essay_response',
         'documents',
-        'application_status',
-        'submitted_at',
-        'remarks',
     ];
 
     protected function casts(): array
     {
         return [
             'date_of_birth' => 'date',
-            'submitted_at' => 'date',
             'gpa' => 'decimal:2',
             'household_income' => 'decimal:2',
             'documents' => 'array',
@@ -54,5 +51,13 @@ class ApplicantProfile extends Model
     public function scholarProfile(): HasOne
     {
         return $this->hasOne(ScholarProfile::class);
+    }
+
+    /**
+     * Get all applications for this profile.
+     */
+    public function applications(): HasMany
+    {
+        return $this->hasMany(Application::class);
     }
 }
