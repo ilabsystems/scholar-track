@@ -9,6 +9,11 @@ export default {
         './resources/views/**/*.blade.php',
     ],
 
+    safelist: [
+        'bg-teal-500', 'bg-teal-600', 'bg-teal-700', 'ring-teal-600',
+        'bg-orange-500', 'bg-orange-600', 'bg-orange-700', 'ring-orange-500',
+    ],
+
     theme: {
         extend: {
             fontFamily: {

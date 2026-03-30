@@ -1,8 +1,11 @@
 <?php
 
+use App\Http\Controllers\Admin\DashboardController;
 use App\Http\Controllers\Admin\PermissionController;
+use App\Http\Controllers\Admin\ReportController;
 use App\Http\Controllers\Admin\RoleController;
 use App\Http\Controllers\Admin\ScholarshipController;
+use App\Http\Controllers\Admin\SettingController;
 use App\Http\Controllers\Admin\UserController;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
@@ -17,8 +20,14 @@ Route::middleware('auth')->group(function () {
         Route::patch('/', [ProfileController::class, 'updateApplicant'])->name('update');
     });
 
-    Route::middleware('role:admin')->group(function () {
-        Route::name('admin.scholarships.')->prefix('admin/scholarships')->group(function () {
+    Route::prefix('admin')->name('admin.')->middleware('role:admin')->group(function () {
+        Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');
+        Route::get('/reports', [ReportController::class, 'index'])->name('reports.index');
+        Route::get('/settings', [SettingController::class, 'index'])->name('settings.index');
+        Route::patch('/settings/password', [SettingController::class, 'updatePassword'])->name('settings.update-password');
+        Route::patch('/settings/notifications', [SettingController::class, 'updateNotifications'])->name('settings.update-notifications');
+
+        Route::name('scholarships.')->prefix('scholarships')->group(function () {
             Route::get('/', [ScholarshipController::class, 'index'])->name('index');
             Route::get('/create', [ScholarshipController::class, 'create'])->name('create');
             Route::post('/', [ScholarshipController::class, 'store'])->name('store');
@@ -28,10 +37,10 @@ Route::middleware('auth')->group(function () {
             Route::delete('/{scholarship}', [ScholarshipController::class, 'destroy'])->name('destroy');
         });
 
-        Route::resource('admin/roles', RoleController::class)->names('admin.roles');
-        Route::resource('admin/permissions', PermissionController::class)->names('admin.permissions');
+        Route::resource('roles', RoleController::class)->names('roles');
+        Route::resource('permissions', PermissionController::class)->names('permissions');
 
-        Route::name('admin.users.')->prefix('admin/users')->group(function () {
+        Route::name('users.')->prefix('users')->group(function () {
             Route::get('/', [UserController::class, 'index'])->name('index');
             Route::get('/{user}/edit-roles', [UserController::class, 'editRoles'])->name('edit-roles');
             Route::post('/{user}/roles', [UserController::class, 'updateRoles'])->name('update-roles');

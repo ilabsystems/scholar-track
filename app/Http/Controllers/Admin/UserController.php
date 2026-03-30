@@ -23,7 +23,21 @@ class UserController extends Controller
             throw new AuthorizationException('Unauthorized');
         }
 
-        $users = User::with('roles')->latest()->get();
+        $query = User::with('roles')->latest();
+
+        if (request('search')) {
+            $search = request('search');
+            $query->where(function ($q) use ($search) {
+                $q->where('name', 'like', "%{$search}%")
+                  ->orWhere('email', 'like', "%{$search}%");
+            });
+        }
+
+        if (request('role')) {
+            $query->whereHas('roles', fn($q) => $q->where('name', request('role')));
+        }
+
+        $users = $query->paginate(15)->withQueryString();
         $roles = Role::all();
 
         return view('admin.users.index', compact('users', 'roles'));
