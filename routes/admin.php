@@ -17,22 +17,24 @@ Route::middleware('auth')->group(function () {
         Route::patch('/', [ProfileController::class, 'updateApplicant'])->name('update');
     });
 
-    Route::name('admin.scholarships.')->prefix('admin/scholarships')->group(function () {
-        Route::get('/', [ScholarshipController::class, 'index'])->name('index');
-        Route::get('/create', [ScholarshipController::class, 'create'])->name('create');
-        Route::post('/', [ScholarshipController::class, 'store'])->name('store');
-        Route::get('/{scholarship}', [ScholarshipController::class, 'show'])->name('show');
-        Route::get('/{scholarship}/edit', [ScholarshipController::class, 'edit'])->name('edit');
-        Route::put('/{scholarship}', [ScholarshipController::class, 'update'])->name('update');
-        Route::delete('/{scholarship}', [ScholarshipController::class, 'destroy'])->name('destroy');
-    });
+    Route::middleware('role:admin')->group(function () {
+        Route::name('admin.scholarships.')->prefix('admin/scholarships')->group(function () {
+            Route::get('/', [ScholarshipController::class, 'index'])->name('index');
+            Route::get('/create', [ScholarshipController::class, 'create'])->name('create');
+            Route::post('/', [ScholarshipController::class, 'store'])->name('store');
+            Route::get('/{scholarship}', [ScholarshipController::class, 'show'])->name('show');
+            Route::get('/{scholarship}/edit', [ScholarshipController::class, 'edit'])->name('edit');
+            Route::put('/{scholarship}', [ScholarshipController::class, 'update'])->name('update');
+            Route::delete('/{scholarship}', [ScholarshipController::class, 'destroy'])->name('destroy');
+        });
 
-    Route::resource('admin/roles', RoleController::class)->names('admin.roles');
-    Route::resource('admin/permissions', PermissionController::class)->names('admin.permissions');
+        Route::resource('admin/roles', RoleController::class)->names('admin.roles');
+        Route::resource('admin/permissions', PermissionController::class)->names('admin.permissions');
 
-    Route::name('admin.users.')->prefix('admin/users')->group(function () {
-        Route::get('/', [UserController::class, 'index'])->name('index');
-        Route::get('/{user}/edit-roles', [UserController::class, 'editRoles'])->name('edit-roles');
-        Route::post('/{user}/roles', [UserController::class, 'updateRoles'])->name('update-roles');
+        Route::name('admin.users.')->prefix('admin/users')->group(function () {
+            Route::get('/', [UserController::class, 'index'])->name('index');
+            Route::get('/{user}/edit-roles', [UserController::class, 'editRoles'])->name('edit-roles');
+            Route::post('/{user}/roles', [UserController::class, 'updateRoles'])->name('update-roles');
+        });
     });
 });
