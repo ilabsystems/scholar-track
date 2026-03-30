@@ -16,7 +16,7 @@ class RolesAndPermissionsSeeder extends Seeder
         // Reset cached roles and permissions
         app()[\Spatie\Permission\PermissionRegistrar::class]->forgetCachedPermissions();
 
-        // Create MVP-aligned permissions only.
+        // Create all permissions.
         $permissions = [
             // Applicant / Scholar permissions
             'create-account',
@@ -33,6 +33,27 @@ class RolesAndPermissionsSeeder extends Seeder
 
             // Admin access control
             'manage-users-roles',
+
+            // Municipality permissions
+            'manage-master-data',
+            'view-dashboard-totals',
+            'view-reports-by-location',
+            'view-compliance-reports',
+            'generate-scholar-history',
+            'view-assigned-applications',
+            'view-ranked-list',
+            'approve-deny-applications',
+            'export-applicant-lists',
+
+            // PESO Officer permissions
+            'encode-scholar-records',
+            'validate-documents',
+            'flag-application-correction',
+            'detect-duplicates',
+            'assign-applications',
+            'filter-search-scholars',
+            'score-applicants',
+            'add-remarks-recommendations',
         ];
 
         foreach ($permissions as $permission) {
