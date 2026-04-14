@@ -16,28 +16,28 @@ class CreateApplicantUsersSeeder extends Seeder
         $applicants = [
             [
                 'name' => 'John Doe',
-                'email' => 'john.doe@example.com',
-                'password' => 'password123',
+                'email' => 'applicant@scholartrack.local',
+                'password' => 'password',
             ],
             [
                 'name' => 'Jane Smith',
                 'email' => 'jane.smith@example.com',
-                'password' => 'password123',
+                'password' => 'password',
             ],
             [
                 'name' => 'Maria Garcia',
                 'email' => 'maria.garcia@example.com',
-                'password' => 'password123',
+                'password' => 'password',
             ],
             [
                 'name' => 'Carlos Rodriguez',
                 'email' => 'carlos.rodriguez@example.com',
-                'password' => 'password123',
+                'password' => 'password',
             ],
             [
                 'name' => 'Sarah Johnson',
                 'email' => 'sarah.johnson@example.com',
-                'password' => 'password123',
+                'password' => 'password',
             ],
         ];
 
@@ -50,8 +50,8 @@ class CreateApplicantUsersSeeder extends Seeder
                 ]
             );
 
-            // Assign the scholar role
-            $user->assignRole('scholar');
+            // Assign the applicant role
+            $user->assignRole('applicant');
         }
     }
 }

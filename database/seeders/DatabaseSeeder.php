@@ -19,6 +19,7 @@ class DatabaseSeeder extends Seeder
             CreateAdminUserSeeder::class,
             CreateApplicantUsersSeeder::class,
             CreateStaffUsersSeeder::class,
+            DemoDataSeeder::class,
         ]);
     }
 }

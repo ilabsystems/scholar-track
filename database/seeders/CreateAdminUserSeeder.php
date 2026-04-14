@@ -14,7 +14,7 @@ class CreateAdminUserSeeder extends Seeder
     public function run(): void
     {
         $admin = User::firstOrCreate(
-            ['email' => 'admin@example.com'],
+            ['email' => 'admin@scholartrack.local'],
             [
                 'name' => 'Administrator',
                 'password' => Hash::make('password'),
@@ -23,5 +23,15 @@ class CreateAdminUserSeeder extends Seeder
 
         // Assign the admin role
         $admin->assignRole('admin');
+
+        // Create additional staff user
+        $staff = User::firstOrCreate(
+            ['email' => 'staff@scholartrack.local'],
+            [
+                'name' => 'Staff Member',
+                'password' => Hash::make('password'),
+            ]
+        );
+        $staff->assignRole('staff');
     }
 }
