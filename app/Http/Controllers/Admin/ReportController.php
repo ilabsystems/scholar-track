@@ -3,17 +3,16 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
-use App\Models\ApplicantProfile;
+use App\Models\Application;
 use App\Models\Scholarship;
-use App\Models\User;
 use Spatie\Permission\Models\Role;
 
 class ReportController extends Controller
 {
     public function index()
     {
-        $applicationStats = ApplicantProfile::selectRaw('application_status as status, count(*) as total')
-            ->groupBy('application_status')
+        $applicationStats = Application::selectRaw('status, count(*) as total')
+            ->groupBy('status')
             ->pluck('total', 'status');
 
         $scholarshipStats = Scholarship::selectRaw('status, count(*) as total')
@@ -22,7 +21,7 @@ class ReportController extends Controller
 
         $userStats = Role::withCount('users')->get()->pluck('users_count', 'name');
 
-        $applications = ApplicantProfile::with('user')
+        $applications = Application::with(['user', 'applicantProfile'])
             ->latest()
             ->paginate(15);
 
