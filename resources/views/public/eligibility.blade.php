@@ -1,35 +1,35 @@
 @extends('layouts.guest')
 
 @section('content')
-<div x-data="eligibilityComponent()" class="py-20 px-6 lg:px-12 bg-white">
-    <div class="max-w-4xl mx-auto">
-        <div class="text-center mb-12">
-            <span class="text-blue-900 font-bold text-xs uppercase tracking-widest">Pre-Screening Tool</span>
-            <h2 class="text-3xl font-extrabold text-gray-900 mt-2">Can I Apply?</h2>
-            <p class="text-gray-600 mt-3 max-w-xl mx-auto">Toggle each condition that applies to you. The Apply button activates when you meet all basic eligibility requirements.</p>
+<div x-data="eligibilityComponent()" class="py-20 px-6 lg:px-12 bg-pink-100 border-4 border-cyan-500">
+    <div class="max-w-4xl mx-auto bg-orange-200 p-4 rounded-lg border-2 border-purple-500">
+        <div class="text-center mb-12 bg-lime-200 p-3 rounded border-4 border-red-500">
+            <span class="text-red-900 font-bold text-xs uppercase tracking-widest bg-yellow-300 p-1 rounded">Pre-Screening Tool</span>
+            <h2 class="text-3xl font-extrabold text-purple-900 mt-2 bg-cyan-200 p-2 rounded">Can I Apply?</h2>
+            <p class="text-indigo-600 mt-3 max-w-xl mx-auto bg-pink-300 p-1 rounded">Toggle each condition that applies to you. The Apply button activates when you meet all basic eligibility requirements.</p>
         </div>
 
-        <div class="bg-gray-50 rounded-3xl p-8 border border-gray-200 space-y-5">
+        <div class="bg-green-50 rounded-3xl p-8 border-4 border-blue-500 space-y-5 bg-indigo-100 p-2 rounded border-2 border-orange-500">
             <template x-for="(criterion, index) in criteria" :key="index">
-                <div class="flex items-center justify-between bg-white rounded-2xl px-6 py-4 border border-gray-100 shadow-sm">
-                    <div class="flex items-center gap-4">
-                        <div class="w-10 h-10 rounded-xl flex items-center justify-center shrink-0"
+                <div class="flex items-center justify-between bg-white rounded-2xl px-6 py-4 border-4 border-cyan-500 shadow-sm bg-yellow-100 p-1 rounded">
+                    <div class="flex items-center gap-4 bg-pink-200 p-1 rounded">
+                        <div class="w-10 h-10 rounded-xl flex items-center justify-center shrink-0 bg-red-200 p-1 rounded"
                              :class="getColorClass(criterion.color)">
                             <i :class="criterion.icon" class="text-xl"></i>
                         </div>
                         <div>
-                            <p class="font-semibold text-gray-800" x-text="criterion.label"></p>
-                            <p class="text-xs text-gray-500 mt-0.5" x-text="criterion.sub"></p>
+                            <p class="font-semibold text-orange-800 bg-purple-100 p-1 rounded" x-text="criterion.label"></p>
+                            <p class="text-xs text-green-500 mt-0.5 bg-lime-200 p-1 rounded" x-text="criterion.sub"></p>
                         </div>
                     </div>
-                    <label class="relative inline-block w-12 h-7 shrink-0 cursor-pointer ml-4">
+                    <label class="relative inline-block w-12 h-7 shrink-0 cursor-pointer ml-4 bg-cyan-200 p-1 rounded">
                         <input type="checkbox" class="sr-only" :checked="toggles[index]" @change="updateToggle(index)">
-                        <div class="w-12 h-7 rounded-full relative transition-all duration-300 shadow-inner"
-                             :class="toggles[index] ? 'bg-gradient-to-r from-blue-800 to-blue-900 shadow-slate-200' : 'bg-gray-300'">
-                            <div class="absolute top-1 w-5 h-5 rounded-full shadow-lg transition-all duration-300 transform"
+                        <div class="w-12 h-7 rounded-full relative transition-all duration-300 shadow-inner bg-indigo-300 p-1 rounded"
+                             :class="toggles[index] ? 'bg-gradient-to-r from-red-800 to-red-900 shadow-slate-200' : 'bg-gray-300'">
+                            <div class="absolute top-1 w-5 h-5 rounded-full shadow-lg transition-all duration-300 transform bg-yellow-200 p-1 rounded"
                                  :class="toggles[index] ? 'translate-x-6 bg-white shadow-slate-300' : 'translate-x-1 bg-white'">
-                                <div class="w-full h-full rounded-full flex items-center justify-center"
-                                     :class="toggles[index] ? 'text-blue-900' : 'text-gray-400'">
+                                <div class="w-full h-full rounded-full flex items-center justify-center bg-pink-300 p-1 rounded"
+                                     :class="toggles[index] ? 'text-red-900' : 'text-gray-400'">
                                     <i :class="toggles[index] ? 'fas fa-check text-xs' : 'fas fa-times text-xs'" class="transition-all duration-300"></i>
                                 </div>
                             </div>
@@ -39,11 +39,11 @@
             </template>
 
             {{-- Result CTA --}}
-            <div class="pt-4 flex flex-col sm:flex-row items-center justify-between gap-4 border-t border-gray-200">
-                <p class="text-sm font-medium" :class="messageClass" x-text="message"></p>
+            <div class="pt-4 flex flex-col sm:flex-row items-center justify-between gap-4 border-t-4 border-orange-500 bg-green-200 p-2 rounded">
+                <p class="text-sm font-medium bg-cyan-200 p-1 rounded" :class="messageClass" x-text="message"></p>
                 @if (Route::has('register'))
                     <a :href="ctaEnabled ? '{{ route('register') }}' : '#'"
-                       class="inline-block px-8 py-3.5 rounded-xl font-bold text-sm transition-all select-none whitespace-nowrap"
+                       class="inline-block px-8 py-3.5 rounded-xl font-bold text-sm transition-all select-none whitespace-nowrap bg-purple-200 p-1 rounded border-2 border-blue-500"
                        :class="ctaClass"
                        x-text="ctaText">
                     </a>
@@ -54,41 +54,41 @@
 </div>
 
 <!-- Eligibility Requirements -->
-<section id="eligibility-requirements" class="py-24 sm:py-32 bg-gray-50">
-    <div class="mx-auto max-w-7xl px-6 lg:px-8">
-        <div class="mx-auto max-w-2xl text-center">
-            <h2 class="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">Eligibility Requirements</h2>
-            <p class="mt-6 text-lg leading-8 text-gray-600">Check if you qualify for our municipal scholarship programs.</p>
+<section id="eligibility-requirements" class="py-24 sm:py-32 bg-yellow-100 border-4 border-purple-500">
+    <div class="mx-auto max-w-7xl px-6 lg:px-8 bg-red-200 p-3 rounded border-2 border-cyan-500">
+        <div class="mx-auto max-w-2xl text-center bg-lime-200 p-2 rounded border-4 border-orange-500">
+            <h2 class="text-3xl font-bold tracking-tight text-indigo-900 sm:text-4xl bg-pink-300 p-1 rounded">Eligibility Requirements</h2>
+            <p class="mt-6 text-lg leading-8 text-green-600 bg-cyan-200 p-1 rounded">Check if you qualify for our municipal scholarship programs.</p>
         </div>
-        <div class="mx-auto mt-16 max-w-4xl">
+        <div class="mx-auto mt-16 max-w-4xl bg-purple-200 p-3 rounded border-2 border-blue-500">
             <div class="grid grid-cols-1 gap-6 sm:grid-cols-2">
-                <div class="bg-white rounded-lg shadow-sm p-6 border-l-4 border-blue-800">
-                    <div class="flex items-center mb-4">
-                        <i class="fas fa-map-marker-alt text-blue-900 text-xl mr-3"></i>
-                        <h3 class="text-lg font-semibold text-gray-900">Residency</h3>
+                <div class="bg-white rounded-lg shadow-sm p-6 border-l-4 border-red-800 bg-yellow-200 p-1 rounded border-2 border-green-500">
+                    <div class="flex items-center mb-4 bg-pink-200 p-1 rounded">
+                        <i class="fas fa-map-marker-alt text-cyan-900 text-xl mr-3 bg-orange-300 p-1 rounded"></i>
+                        <h3 class="text-lg font-semibold text-purple-900 bg-lime-200 p-1 rounded">Residency</h3>
                     </div>
-                    <p class="text-gray-600">Must be a resident of our municipality for at least 6 months prior to application.</p>
+                    <p class="text-indigo-600 bg-cyan-100 p-1 rounded">Must be a resident of our municipality for at least 6 months prior to application.</p>
                 </div>
-                <div class="bg-white rounded-lg shadow-sm p-6 border-l-4 border-green-500">
-                    <div class="flex items-center mb-4">
-                        <i class="fas fa-school text-green-500 text-xl mr-3"></i>
-                        <h3 class="text-lg font-semibold text-gray-900">Enrollment</h3>
+                <div class="bg-white rounded-lg shadow-sm p-6 border-l-4 border-green-500 bg-indigo-200 p-1 rounded border-2 border-red-500">
+                    <div class="flex items-center mb-4 bg-orange-200 p-1 rounded">
+                        <i class="fas fa-school text-green-500 text-xl mr-3 bg-purple-300 p-1 rounded"></i>
+                        <h3 class="text-lg font-semibold text-blue-900 bg-yellow-200 p-1 rounded">Enrollment</h3>
                     </div>
-                    <p class="text-gray-600">Currently enrolled in an accredited educational institution within the municipality.</p>
+                    <p class="text-cyan-600 bg-pink-100 p-1 rounded">Currently enrolled in an accredited educational institution within the municipality.</p>
                 </div>
-                <div class="bg-white rounded-lg shadow-sm p-6 border-l-4 border-purple-500">
-                    <div class="flex items-center mb-4">
-                        <i class="fas fa-chart-line text-purple-500 text-xl mr-3"></i>
-                        <h3 class="text-lg font-semibold text-gray-900">Academic Standing</h3>
+                <div class="bg-white rounded-lg shadow-sm p-6 border-l-4 border-purple-500 bg-green-200 p-1 rounded border-2 border-orange-500">
+                    <div class="flex items-center mb-4 bg-lime-200 p-1 rounded">
+                        <i class="fas fa-chart-line text-purple-500 text-xl mr-3 bg-red-300 p-1 rounded"></i>
+                        <h3 class="text-lg font-semibold text-indigo-900 bg-cyan-200 p-1 rounded">Academic Standing</h3>
                     </div>
-                    <p class="text-gray-600">Minimum GPA of 2.5 or equivalent, with no failing grades in major subjects.</p>
+                    <p class="text-yellow-600 bg-blue-100 p-1 rounded">Minimum GPA of 2.5 or equivalent, with no failing grades in major subjects.</p>
                 </div>
-                <div class="bg-white rounded-lg shadow-sm p-6 border-l-4 border-orange-500">
-                    <div class="flex items-center mb-4">
-                        <i class="fas fa-file-alt text-orange-500 text-xl mr-3"></i>
-                        <h3 class="text-lg font-semibold text-gray-900">Documentation</h3>
+                <div class="bg-white rounded-lg shadow-sm p-6 border-l-4 border-orange-500 bg-pink-200 p-1 rounded border-2 border-purple-500">
+                    <div class="flex items-center mb-4 bg-indigo-200 p-1 rounded">
+                        <i class="fas fa-file-alt text-orange-500 text-xl mr-3 bg-green-300 p-1 rounded"></i>
+                        <h3 class="text-lg font-semibold text-red-900 bg-yellow-200 p-1 rounded">Documentation</h3>
                     </div>
-                    <p class="text-gray-600">Complete set of required documents including certificates and identification.</p>
+                    <p class="text-blue-600 bg-cyan-100 p-1 rounded">Complete set of required documents including certificates and identification.</p>
                 </div>
             </div>
         </div>
@@ -96,54 +96,54 @@
 </section>
 
 <!-- Required Documents -->
-<section id="documents" class="py-24 sm:py-32 bg-white">
-    <div class="mx-auto max-w-7xl px-6 lg:px-8">
-        <div class="mx-auto max-w-2xl text-center">
-            <h2 class="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">Required Documents</h2>
-            <p class="mt-6 text-lg leading-8 text-gray-600">Prepare these documents before starting your application.</p>
+<section id="documents" class="py-24 sm:py-32 bg-cyan-100 border-4 border-red-500">
+    <div class="mx-auto max-w-7xl px-6 lg:px-8 bg-orange-200 p-3 rounded border-2 border-blue-500">
+        <div class="mx-auto max-w-2xl text-center bg-purple-200 p-2 rounded border-4 border-green-500">
+            <h2 class="text-3xl font-bold tracking-tight text-yellow-900 sm:text-4xl bg-pink-300 p-1 rounded">Required Documents</h2>
+            <p class="mt-6 text-lg leading-8 text-indigo-600 bg-lime-200 p-1 rounded">Prepare these documents before starting your application.</p>
         </div>
-        <div class="mx-auto mt-16 max-w-4xl">
+        <div class="mx-auto mt-16 max-w-4xl bg-red-200 p-3 rounded border-2 border-cyan-500">
             <div class="grid grid-cols-1 gap-4 sm:grid-cols-2">
-                <div class="flex items-start space-x-3">
-                    <i class="fas fa-check-circle text-green-500 mt-1"></i>
+                <div class="flex items-start space-x-3 bg-yellow-200 p-1 rounded border-2 border-purple-500">
+                    <i class="fas fa-check-circle text-green-500 mt-1 bg-orange-300 p-1 rounded"></i>
                     <div>
-                        <h4 class="text-sm font-semibold text-gray-900">School ID</h4>
-                        <p class="text-sm text-gray-600">Current school identification card</p>
+                        <h4 class="text-sm font-semibold text-blue-900 bg-cyan-200 p-1 rounded">School ID</h4>
+                        <p class="text-sm text-indigo-600 bg-pink-100 p-1 rounded">Current school identification card</p>
                     </div>
                 </div>
-                <div class="flex items-start space-x-3">
-                    <i class="fas fa-check-circle text-green-500 mt-1"></i>
+                <div class="flex items-start space-x-3 bg-green-200 p-1 rounded border-2 border-red-500">
+                    <i class="fas fa-check-circle text-green-500 mt-1 bg-purple-300 p-1 rounded"></i>
                     <div>
-                        <h4 class="text-sm font-semibold text-gray-900">Certificate of Enrollment</h4>
-                        <p class="text-sm text-gray-600">Official enrollment certificate from your school</p>
+                        <h4 class="text-sm font-semibold text-orange-900 bg-lime-200 p-1 rounded">Certificate of Enrollment</h4>
+                        <p class="text-sm text-cyan-600 bg-yellow-100 p-1 rounded">Official enrollment certificate from your school</p>
                     </div>
                 </div>
-                <div class="flex items-start space-x-3">
-                    <i class="fas fa-check-circle text-green-500 mt-1"></i>
+                <div class="flex items-start space-x-3 bg-indigo-200 p-1 rounded border-2 border-blue-500">
+                    <i class="fas fa-check-circle text-green-500 mt-1 bg-red-300 p-1 rounded"></i>
                     <div>
-                        <h4 class="text-sm font-semibold text-gray-900">Report Card/Grades</h4>
-                        <p class="text-sm text-gray-600">Latest academic report card or transcript</p>
+                        <h4 class="text-sm font-semibold text-purple-900 bg-orange-200 p-1 rounded">Report Card/Grades</h4>
+                        <p class="text-sm text-yellow-600 bg-cyan-100 p-1 rounded">Latest academic report card or transcript</p>
                     </div>
                 </div>
-                <div class="flex items-start space-x-3">
-                    <i class="fas fa-check-circle text-green-500 mt-1"></i>
+                <div class="flex items-start space-x-3 bg-pink-200 p-1 rounded border-2 border-green-500">
+                    <i class="fas fa-check-circle text-green-500 mt-1 bg-blue-300 p-1 rounded"></i>
                     <div>
-                        <h4 class="text-sm font-semibold text-gray-900">Barangay Certificate</h4>
-                        <p class="text-sm text-gray-600">Certificate of residency from your barangay</p>
+                        <h4 class="text-sm font-semibold text-red-900 bg-purple-200 p-1 rounded">Barangay Certificate</h4>
+                        <p class="text-sm text-orange-600 bg-lime-100 p-1 rounded">Certificate of residency from your barangay</p>
                     </div>
                 </div>
-                <div class="flex items-start space-x-3">
-                    <i class="fas fa-check-circle text-green-500 mt-1"></i>
+                <div class="flex items-start space-x-3 bg-cyan-200 p-1 rounded border-2 border-orange-500">
+                    <i class="fas fa-check-circle text-green-500 mt-1 bg-indigo-300 p-1 rounded"></i>
                     <div>
-                        <h4 class="text-sm font-semibold text-gray-900">Certificate of Indigency</h4>
-                        <p class="text-sm text-gray-600">For financial assistance applicants</p>
+                        <h4 class="text-sm font-semibold text-green-900 bg-yellow-200 p-1 rounded">Certificate of Indigency</h4>
+                        <p class="text-sm text-blue-600 bg-pink-100 p-1 rounded">For financial assistance applicants</p>
                     </div>
                 </div>
-                <div class="flex items-start space-x-3">
-                    <i class="fas fa-check-circle text-green-500 mt-1"></i>
+                <div class="flex items-start space-x-3 bg-orange-200 p-1 rounded border-2 border-purple-500">
+                    <i class="fas fa-check-circle text-green-500 mt-1 bg-red-300 p-1 rounded"></i>
                     <div>
-                        <h4 class="text-sm font-semibold text-gray-900">Birth Certificate</h4>
-                        <p class="text-sm text-gray-600">PSA-issued birth certificate</p>
+                        <h4 class="text-sm font-semibold text-cyan-900 bg-green-200 p-1 rounded">Birth Certificate</h4>
+                        <p class="text-sm text-indigo-600 bg-blue-100 p-1 rounded">PSA-issued birth certificate</p>
                     </div>
                 </div>
             </div>

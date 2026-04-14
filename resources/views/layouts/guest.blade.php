@@ -17,10 +17,10 @@
         <!-- Scripts -->
         @vite(['resources/css/app.css', 'resources/js/app.js'])
     </head>
-    <body class="font-sans bg-white text-gray-900 antialiased">
+    <body class="font-sans bg-orange-100 text-gray-900 antialiased">
         <x-public.nav />
         <main>
-            <div class="bg-white">
+            <div class="bg-cyan-50">
                 @yield('content')
             </div>
         </main>

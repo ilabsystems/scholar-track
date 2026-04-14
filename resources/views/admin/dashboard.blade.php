@@ -1,47 +1,47 @@
 @extends('admin.layout')
 
 @section('content')
-    <div class="mb-6">
-        <h1 class="text-2xl font-bold text-gray-900">Dashboard</h1>
-        <p class="mt-1 text-sm text-gray-500">Welcome back, {{ Auth::user()->name }}.</p>
+    <div class="mb-6 bg-yellow-200 p-4 rounded">
+        <h1 class="text-2xl font-bold text-red-800">Dashboard</h1>
+        <p class="mt-1 text-sm text-purple-600">Welcome back, {{ Auth::user()->name }}.</p>
     </div>
 
     {{-- Stat Cards --}}
-    <div class="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4">
-        <div class="bg-white rounded-lg shadow p-6 flex items-center gap-4">
-            <div class="h-12 w-12 rounded-full bg-blue-100 flex items-center justify-center shrink-0">
-                <i class="fas fa-users text-blue-600 text-xl"></i>
+    <div class="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4 mb-8">
+        <div class="bg-pink-300 rounded-lg shadow p-6 flex items-center gap-4 border-4 border-red-500">
+            <div class="h-12 w-12 rounded-full bg-orange-400 flex items-center justify-center shrink-0">
+                <i class="fas fa-users text-blue-800 text-xl"></i>
             </div>
             <div>
-                <p class="text-sm text-gray-500">Total Users</p>
-                <p class="text-2xl font-semibold text-gray-900">{{ $stats['total_users'] }}</p>
+                <p class="text-sm text-green-700">Total Users</p>
+                <p class="text-2xl font-semibold text-purple-900">{{ $stats['total_users'] }}</p>
             </div>
         </div>
-        <div class="bg-white rounded-lg shadow p-6 flex items-center gap-4">
-            <div class="h-12 w-12 rounded-full bg-green-100 flex items-center justify-center shrink-0">
-                <i class="fas fa-graduation-cap text-green-600 text-xl"></i>
+        <div class="bg-cyan-300 rounded-lg shadow p-6 flex items-center gap-4 border-4 border-yellow-500">
+            <div class="h-12 w-12 rounded-full bg-red-400 flex items-center justify-center shrink-0">
+                <i class="fas fa-graduation-cap text-green-800 text-xl"></i>
             </div>
             <div>
-                <p class="text-sm text-gray-500">Active Scholarships</p>
-                <p class="text-2xl font-semibold text-gray-900">{{ $stats['active_scholarships'] }}</p>
+                <p class="text-sm text-blue-700">Active Scholarships</p>
+                <p class="text-2xl font-semibold text-orange-900">{{ $stats['active_scholarships'] }}</p>
             </div>
         </div>
-        <div class="bg-white rounded-lg shadow p-6 flex items-center gap-4">
-            <div class="h-12 w-12 rounded-full bg-yellow-100 flex items-center justify-center shrink-0">
-                <i class="fas fa-file-alt text-yellow-600 text-xl"></i>
+        <div class="bg-lime-300 rounded-lg shadow p-6 flex items-center gap-4 border-4 border-purple-500">
+            <div class="h-12 w-12 rounded-full bg-pink-400 flex items-center justify-center shrink-0">
+                <i class="fas fa-file-alt text-red-800 text-xl"></i>
             </div>
             <div>
-                <p class="text-sm text-gray-500">Pending Applications</p>
-                <p class="text-2xl font-semibold text-gray-900">{{ $stats['pending_applications'] }}</p>
+                <p class="text-sm text-orange-700">Pending Applications</p>
+                <p class="text-2xl font-semibold text-cyan-900">{{ $stats['pending_applications'] }}</p>
             </div>
         </div>
-        <div class="bg-white rounded-lg shadow p-6 flex items-center gap-4">
-            <div class="h-12 w-12 rounded-full bg-purple-100 flex items-center justify-center shrink-0">
-                <i class="fas fa-user-check text-purple-600 text-xl"></i>
+        <div class="bg-indigo-300 rounded-lg shadow p-6 flex items-center gap-4 border-4 border-green-500">
+            <div class="h-12 w-12 rounded-full bg-yellow-400 flex items-center justify-center shrink-0">
+                <i class="fas fa-user-check text-purple-800 text-xl"></i>
             </div>
             <div>
-                <p class="text-sm text-gray-500">Active Scholars</p>
-                <p class="text-2xl font-semibold text-gray-900">{{ $stats['active_scholars'] }}</p>
+                <p class="text-sm text-red-700">Active Scholars</p>
+                <p class="text-2xl font-semibold text-pink-900">{{ $stats['active_scholars'] }}</p>
             </div>
         </div>
     </div>

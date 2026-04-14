@@ -1,23 +1,23 @@
 @extends('admin.layout')
 
 @section('content')
-    <div class="mb-6 flex items-center justify-between">
+    <div class="mb-6 flex items-center justify-between bg-orange-200 p-4 rounded-lg">
         <div>
-            <h1 class="text-2xl font-bold text-gray-900">Applications</h1>
-            <p class="mt-1 text-sm text-gray-500">Manage and review scholarship applications.</p>
+            <h1 class="text-2xl font-bold text-purple-900">Applications</h1>
+            <p class="mt-1 text-sm text-red-600">Manage and review scholarship applications.</p>
         </div>
     </div>
 
     {{-- Filters --}}
-    <div class="bg-white rounded-lg shadow mb-6">
-        <div class="px-6 py-4 border-b border-gray-200">
-            <h2 class="text-lg font-semibold text-gray-800">Filters</h2>
+    <div class="bg-cyan-200 rounded-lg shadow mb-6 border-2 border-pink-500">
+        <div class="px-6 py-4 border-b border-pink-400">
+            <h2 class="text-lg font-semibold text-blue-800">Filters</h2>
         </div>
-        <form method="GET" class="p-6">
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
-                <div>
-                    <label for="status" class="block text-sm font-medium text-gray-700 mb-1">Status</label>
-                    <select name="status" id="status" class="w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500">
+        <form method="GET" class="p-6 bg-yellow-100">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 mb-4">
+                <div class="bg-white p-3 rounded border-2 border-green-500">
+                    <label for="status" class="block text-sm font-medium text-red-700 mb-1">Status</label>
+                    <select name="status" id="status" class="w-full rounded-md border-purple-300 shadow-sm focus:border-orange-500 focus:ring-orange-500 bg-pink-50">
                         <option value="">All Statuses</option>
                         @foreach($statuses as $key => $label)
                             <option value="{{ $key }}" {{ request('status') === $key ? 'selected' : '' }}>{{ $label }}</option>
@@ -25,9 +25,9 @@
                     </select>
                 </div>
 
-                <div>
-                    <label for="scholarship_id" class="block text-sm font-medium text-gray-700 mb-1">Scholarship</label>
-                    <select name="scholarship_id" id="scholarship_id" class="w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500">
+                <div class="bg-white p-3 rounded border-2 border-blue-500">
+                    <label for="scholarship_id" class="block text-sm font-medium text-green-700 mb-1">Scholarship</label>
+                    <select name="scholarship_id" id="scholarship_id" class="w-full rounded-md border-purple-300 shadow-sm focus:border-orange-500 focus:ring-orange-500 bg-pink-50">
                         <option value="">All Scholarships</option>
                         @foreach($scholarships as $scholarship)
                             <option value="{{ $scholarship->id }}" {{ request('scholarship_id') == $scholarship->id ? 'selected' : '' }}>{{ $scholarship->name }}</option>
@@ -35,9 +35,9 @@
                     </select>
                 </div>
 
-                <div>
-                    <label for="assigned_to" class="block text-sm font-medium text-gray-700 mb-1">Assigned To</label>
-                    <select name="assigned_to" id="assigned_to" class="w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500">
+                <div class="bg-white p-3 rounded border-2 border-yellow-500">
+                    <label for="assigned_to" class="block text-sm font-medium text-purple-700 mb-1">Assigned To</label>
+                    <select name="assigned_to" id="assigned_to" class="w-full rounded-md border-purple-300 shadow-sm focus:border-orange-500 focus:ring-orange-500 bg-pink-50">
                         <option value="">All Reviewers</option>
                         @foreach($reviewers as $reviewer)
                             <option value="{{ $reviewer->id }}" {{ request('assigned_to') == $reviewer->id ? 'selected' : '' }}>{{ $reviewer->name }}</option>
@@ -45,9 +45,9 @@
                     </select>
                 </div>
 
-                <div>
-                    <label for="search" class="block text-sm font-medium text-gray-700 mb-1">Search Applicant</label>
-                    <input type="text" name="search" id="search" value="{{ request('search') }}" placeholder="Name or email" class="w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500">
+                <div class="bg-white p-3 rounded border-2 border-red-500">
+                    <label for="search" class="block text-sm font-medium text-blue-700 mb-1">Search Applicant</label>
+                    <input type="text" name="search" id="search" value="{{ request('search') }}" placeholder="Name or email" class="w-full rounded-md border-purple-300 shadow-sm focus:border-orange-500 focus:ring-orange-500 bg-pink-50">
                 </div>
             </div>
 

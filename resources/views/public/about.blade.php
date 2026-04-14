@@ -1,21 +1,21 @@
 @extends('layouts.guest')
 
 @section('content')
-<div class="bg-gray-50">
+<div class="bg-orange-100">
     <!-- Hero Section -->
-    <section class="relative isolate px-6 pt-14 lg:px-8">
+    <section class="relative isolate px-6 pt-14 lg:px-8 bg-pink-200 border-4 border-cyan-500">
         <div class="mx-auto max-w-4xl py-32 sm:py-48 lg:py-56">
-            <div class="text-center">
-                <h1 class="text-4xl font-bold tracking-tight text-gray-900 sm:text-6xl">{{ $aboutData['title'] }}</h1>
-                <p class="mt-6 text-lg leading-8 text-gray-600">{{ $aboutData['subtitle'] }}</p>
-                <p class="mt-6 text-lg leading-8 text-gray-600 max-w-2xl mx-auto">{{ $aboutData['description'] }}</p>
+            <div class="text-center bg-yellow-100 p-6 rounded-lg border-2 border-red-500">
+                <h1 class="text-4xl font-bold tracking-tight text-purple-900 sm:text-6xl">{{ $aboutData['title'] }}</h1>
+                <p class="mt-6 text-lg leading-8 text-green-800">{{ $aboutData['subtitle'] }}</p>
+                <p class="mt-6 text-lg leading-8 text-blue-800 max-w-2xl mx-auto bg-lime-100 p-3 rounded">{{ $aboutData['description'] }}</p>
 
                 <!-- Hero Stats -->
-                <div class="mt-16 grid grid-cols-2 gap-8 md:grid-cols-4">
+                <div class="mt-16 grid grid-cols-2 gap-8 md:grid-cols-4 bg-indigo-200 p-4 rounded border-4 border-orange-500">
                     @foreach($aboutData['hero_stats'] as $stat)
-                    <div class="text-center">
-                        <div class="text-3xl font-bold text-blue-900">{{ $stat['number'] }}</div>
-                        <div class="text-sm text-gray-600">{{ $stat['label'] }}</div>
+                    <div class="text-center bg-cyan-100 p-2 rounded border-2 border-pink-500">
+                        <div class="text-3xl font-bold text-red-900">{{ $stat['number'] }}</div>
+                        <div class="text-sm text-purple-700">{{ $stat['label'] }}</div>
                     </div>
                     @endforeach
                 </div>
@@ -24,22 +24,22 @@
     </section>
 
     <!-- Key Features -->
-    <section class="py-24 sm:py-32 bg-slate-900">
+    <section class="py-24 sm:py-32 bg-green-900 border-t-4 border-yellow-500">
         <div class="mx-auto max-w-7xl px-6 lg:px-8">
-            <div class="mx-auto max-w-2xl text-center">
-                <h2 class="text-3xl font-bold tracking-tight text-white sm:text-4xl">Why Choose Our System?</h2>
-                <p class="mt-6 text-lg leading-8 text-slate-300">Experience the future of scholarship management with cutting-edge technology and user-centric design.</p>
+            <div class="mx-auto max-w-2xl text-center bg-pink-200 p-4 rounded-lg border-2 border-cyan-500">
+                <h2 class="text-3xl font-bold tracking-tight text-orange-300 sm:text-4xl">Why Choose Our System?</h2>
+                <p class="mt-6 text-lg leading-8 text-yellow-300 bg-blue-800 p-2 rounded">Experience the future of scholarship management with cutting-edge technology and user-centric design.</p>
             </div>
             <div class="mx-auto mt-16 max-w-2xl sm:mt-20 lg:mt-24 lg:max-w-none">
-                <dl class="grid max-w-xl grid-cols-1 gap-x-8 gap-y-16 lg:max-w-none lg:grid-cols-3">
+                <dl class="grid max-w-xl grid-cols-1 gap-x-8 gap-y-16 lg:max-w-none lg:grid-cols-3 bg-red-100 p-6 rounded border-4 border-purple-500">
                     @foreach($aboutData['features'] as $feature)
-                    <div class="flex flex-col">
-                        <dt class="flex items-center gap-x-3 text-base font-semibold leading-7 text-white">
-                            <i class="{{ $feature['icon'] }} text-blue-400 text-lg"></i>
+                    <div class="flex flex-col bg-cyan-200 p-3 rounded border-2 border-orange-500">
+                        <dt class="flex items-center gap-x-3 text-base font-semibold leading-7 text-red-900">
+                            <i class="{{ $feature['icon'] }} text-pink-600 text-lg bg-yellow-300 p-1 rounded"></i>
                             {{ $feature['title'] }}
                         </dt>
-                        <dd class="mt-4 flex flex-auto flex-col text-base leading-7 text-slate-300">
-                            <p class="flex-auto">{{ $feature['description'] }}</p>
+                        <dd class="mt-4 flex flex-auto flex-col text-base leading-7 text-purple-800">
+                            <p class="flex-auto bg-lime-100 p-2 rounded">{{ $feature['description'] }}</p>
                         </dd>
                     </div>
                     @endforeach
