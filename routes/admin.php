@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Admin\ApplicationController;
 use App\Http\Controllers\Admin\DashboardController;
 use App\Http\Controllers\Admin\PermissionController;
 use App\Http\Controllers\Admin\ReportController;
@@ -20,7 +21,7 @@ Route::middleware('auth')->group(function () {
         Route::patch('/', [ProfileController::class, 'updateApplicant'])->name('update');
     });
 
-    Route::prefix('admin')->name('admin.')->middleware('role:admin')->group(function () {
+    Route::prefix('admin')->name('admin.')->middleware('role:admin|staff|reviewer|municipality|peso_officer')->group(function () {
         Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');
         Route::get('/reports', [ReportController::class, 'index'])->name('reports.index');
         Route::get('/settings', [SettingController::class, 'index'])->name('settings.index');
@@ -35,6 +36,12 @@ Route::middleware('auth')->group(function () {
             Route::get('/{scholarship}/edit', [ScholarshipController::class, 'edit'])->name('edit');
             Route::put('/{scholarship}', [ScholarshipController::class, 'update'])->name('update');
             Route::delete('/{scholarship}', [ScholarshipController::class, 'destroy'])->name('destroy');
+        });
+
+        Route::name('applications.')->prefix('applications')->middleware('role:admin|staff|reviewer|municipality|peso_officer')->group(function () {
+            Route::get('/', [ApplicationController::class, 'index'])->name('index');
+            Route::get('/{application}', [ApplicationController::class, 'show'])->name('show');
+            Route::put('/{application}', [ApplicationController::class, 'update'])->name('update');
         });
 
         Route::resource('roles', RoleController::class)->names('roles');
