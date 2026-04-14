@@ -61,13 +61,13 @@
                             </div>
                             <div>
                                 <p class="text-sm font-medium text-gray-900">{{ $application->user->name }}</p>
-                                <p class="text-xs text-gray-500">{{ $application->field_of_study ?? 'N/A' }}</p>
+                                <p class="text-xs text-gray-500">{{ $application->applicantProfile->field_of_study ?? 'N/A' }}</p>
                             </div>
                         </div>
                         <span class="px-2 py-1 text-xs font-semibold rounded-full
-                            {{ $application->application_status === 'approved' ? 'bg-green-100 text-green-800' :
-                               ($application->application_status === 'rejected' ? 'bg-red-100 text-red-800' : 'bg-yellow-100 text-yellow-800') }}">
-                            {{ ucfirst($application->application_status ?? 'pending') }}
+                            {{ $application->status === 'approved' ? 'bg-green-100 text-green-800' :
+                               ($application->status === 'rejected' ? 'bg-red-100 text-red-800' : 'bg-yellow-100 text-yellow-800') }}">
+                            {{ ucfirst(str_replace('_', ' ', $application->status)) }}
                         </span>
                     </div>
                 @empty
